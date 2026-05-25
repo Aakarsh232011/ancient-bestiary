@@ -38,7 +38,7 @@ function MythologyPage() {
         <div className="rune-divider mt-10 font-rune text-[10px]">{list.length} Specimens</div>
       </section>
       <section className="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {list.map(c => <CreatureCard key={c.id} creature={c} />)}
+        {list.map((c: any) => <CreatureCard key={c.id} creature={c} />)}
       </section>
     </SiteShell>
   );

@@ -41,7 +41,7 @@ function CategoryPage() {
           <div className="glass-card p-12 text-center text-muted-foreground">No recorded specimens in this order yet.</div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {list.map(c => <CreatureCard key={c.id} creature={c} />)}
+            {list.map((c: any) => <CreatureCard key={c.id} creature={c} />)}
           </div>
         )}
       </section>

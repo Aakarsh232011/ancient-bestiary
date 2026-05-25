@@ -77,7 +77,7 @@ function CreaturePage() {
           <div className="glass-card p-8">
             <h2 className="font-display text-2xl text-gold">⚡ Powers</h2>
             <div className="mt-4 space-y-4">
-              {creature.powers.map(p => (
+              {creature.powers.map((p: {name:string;desc:string}) => (
                 <div key={p.name} className="flex gap-4">
                   <div className="w-1 self-stretch bg-gradient-to-b from-gold/60 to-transparent rounded-full" />
                   <div>
@@ -91,7 +91,7 @@ function CreaturePage() {
           <div className="glass-card p-8">
             <h2 className="font-display text-2xl text-blood">☠ Weaknesses</h2>
             <ul className="mt-4 grid sm:grid-cols-2 gap-2">
-              {creature.weaknesses.map(w => (
+              {creature.weaknesses.map((w: string) => (
                 <li key={w} className="text-sm text-foreground/80 border-l-2 border-blood/40 pl-3 py-1">{w}</li>
               ))}
             </ul>
@@ -102,7 +102,7 @@ function CreaturePage() {
           <div className="glass-card p-6">
             <h3 className="font-rune text-xs text-gold/70 mb-3">Habitat</h3>
             <div className="flex flex-wrap gap-1.5">
-              {creature.habitat.map(h => (
+              {creature.habitat.map((h: string) => (
                 <span key={h} className="text-xs font-rune px-2 py-1 rounded bg-secondary/60 border border-gold/15">{h}</span>
               ))}
             </div>
