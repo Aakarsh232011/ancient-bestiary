@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as ForbiddenRouteImport } from './routes/forbidden'
 import { Route as BestiaryRouteImport } from './routes/bestiary'
@@ -18,6 +19,11 @@ import { Route as MythologySlugRouteImport } from './routes/mythology.$slug'
 import { Route as CategoriesSlugRouteImport } from './routes/categories.$slug'
 import { Route as BestiaryIdRouteImport } from './routes/bestiary.$id'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MapRoute = MapRouteImport.update({
   id: '/map',
   path: '/map',
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/bestiary': typeof BestiaryRouteWithChildren
   '/forbidden': typeof ForbiddenRoute
   '/map': typeof MapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bestiary/$id': typeof BestiaryIdRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/mythology/$slug': typeof MythologySlugRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/bestiary': typeof BestiaryRouteWithChildren
   '/forbidden': typeof ForbiddenRoute
   '/map': typeof MapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bestiary/$id': typeof BestiaryIdRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/mythology/$slug': typeof MythologySlugRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/bestiary': typeof BestiaryRouteWithChildren
   '/forbidden': typeof ForbiddenRoute
   '/map': typeof MapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bestiary/$id': typeof BestiaryIdRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/mythology/$slug': typeof MythologySlugRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/bestiary'
     | '/forbidden'
     | '/map'
+    | '/sitemap.xml'
     | '/bestiary/$id'
     | '/categories/$slug'
     | '/mythology/$slug'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/bestiary'
     | '/forbidden'
     | '/map'
+    | '/sitemap.xml'
     | '/bestiary/$id'
     | '/categories/$slug'
     | '/mythology/$slug'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/bestiary'
     | '/forbidden'
     | '/map'
+    | '/sitemap.xml'
     | '/bestiary/$id'
     | '/categories/$slug'
     | '/mythology/$slug'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   BestiaryRoute: typeof BestiaryRouteWithChildren
   ForbiddenRoute: typeof ForbiddenRoute
   MapRoute: typeof MapRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   CategoriesSlugRoute: typeof CategoriesSlugRoute
   MythologySlugRoute: typeof MythologySlugRoute
   MythologyIndexRoute: typeof MythologyIndexRoute
@@ -135,6 +148,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/map': {
       id: '/map'
       path: '/map'
@@ -211,6 +231,7 @@ const rootRouteChildren: RootRouteChildren = {
   BestiaryRoute: BestiaryRouteWithChildren,
   ForbiddenRoute: ForbiddenRoute,
   MapRoute: MapRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   CategoriesSlugRoute: CategoriesSlugRoute,
   MythologySlugRoute: MythologySlugRoute,
   MythologyIndexRoute: MythologyIndexRoute,
@@ -218,3 +239,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
