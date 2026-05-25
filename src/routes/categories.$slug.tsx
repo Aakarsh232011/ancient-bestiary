@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { CreatureCard } from "@/components/CreatureCard";
-import { categories, getByCategory, type Category } from "@/data/creatures";
+import { categories, getByCategory, type Category, type Creature } from "@/data/creatures";
 
 export const Route = createFileRoute("/categories/$slug")({
   loader: ({ params }) => {
@@ -41,7 +41,7 @@ function CategoryPage() {
           <div className="glass-card p-12 text-center text-muted-foreground">No recorded specimens in this order yet.</div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {list.map((c: any) => <CreatureCard key={c.id} creature={c} />)}
+            {list.map((c: Creature) => <CreatureCard key={c.id} creature={c} />)}
           </div>
         )}
       </section>
