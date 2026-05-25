@@ -9,38 +9,173 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as ForbiddenRouteImport } from './routes/forbidden'
+import { Route as BestiaryRouteImport } from './routes/bestiary'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MythologyIndexRouteImport } from './routes/mythology.index'
+import { Route as MythologySlugRouteImport } from './routes/mythology.$slug'
+import { Route as CategoriesSlugRouteImport } from './routes/categories.$slug'
+import { Route as BestiaryIdRouteImport } from './routes/bestiary.$id'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForbiddenRoute = ForbiddenRouteImport.update({
+  id: '/forbidden',
+  path: '/forbidden',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BestiaryRoute = BestiaryRouteImport.update({
+  id: '/bestiary',
+  path: '/bestiary',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MythologyIndexRoute = MythologyIndexRouteImport.update({
+  id: '/mythology/',
+  path: '/mythology/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MythologySlugRoute = MythologySlugRouteImport.update({
+  id: '/mythology/$slug',
+  path: '/mythology/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesSlugRoute = CategoriesSlugRouteImport.update({
+  id: '/categories/$slug',
+  path: '/categories/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BestiaryIdRoute = BestiaryIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => BestiaryRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bestiary': typeof BestiaryRouteWithChildren
+  '/forbidden': typeof ForbiddenRoute
+  '/map': typeof MapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/bestiary/$id': typeof BestiaryIdRoute
+  '/categories/$slug': typeof CategoriesSlugRoute
+  '/mythology/$slug': typeof MythologySlugRoute
+  '/mythology/': typeof MythologyIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bestiary': typeof BestiaryRouteWithChildren
+  '/forbidden': typeof ForbiddenRoute
+  '/map': typeof MapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/bestiary/$id': typeof BestiaryIdRoute
+  '/categories/$slug': typeof CategoriesSlugRoute
+  '/mythology/$slug': typeof MythologySlugRoute
+  '/mythology': typeof MythologyIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bestiary': typeof BestiaryRouteWithChildren
+  '/forbidden': typeof ForbiddenRoute
+  '/map': typeof MapRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/bestiary/$id': typeof BestiaryIdRoute
+  '/categories/$slug': typeof CategoriesSlugRoute
+  '/mythology/$slug': typeof MythologySlugRoute
+  '/mythology/': typeof MythologyIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bestiary'
+    | '/forbidden'
+    | '/map'
+    | '/sitemap.xml'
+    | '/bestiary/$id'
+    | '/categories/$slug'
+    | '/mythology/$slug'
+    | '/mythology/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bestiary'
+    | '/forbidden'
+    | '/map'
+    | '/sitemap.xml'
+    | '/bestiary/$id'
+    | '/categories/$slug'
+    | '/mythology/$slug'
+    | '/mythology'
+  id:
+    | '__root__'
+    | '/'
+    | '/bestiary'
+    | '/forbidden'
+    | '/map'
+    | '/sitemap.xml'
+    | '/bestiary/$id'
+    | '/categories/$slug'
+    | '/mythology/$slug'
+    | '/mythology/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BestiaryRoute: typeof BestiaryRouteWithChildren
+  ForbiddenRoute: typeof ForbiddenRoute
+  MapRoute: typeof MapRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  CategoriesSlugRoute: typeof CategoriesSlugRoute
+  MythologySlugRoute: typeof MythologySlugRoute
+  MythologyIndexRoute: typeof MythologyIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forbidden': {
+      id: '/forbidden'
+      path: '/forbidden'
+      fullPath: '/forbidden'
+      preLoaderRoute: typeof ForbiddenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bestiary': {
+      id: '/bestiary'
+      path: '/bestiary'
+      fullPath: '/bestiary'
+      preLoaderRoute: typeof BestiaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +183,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mythology/': {
+      id: '/mythology/'
+      path: '/mythology'
+      fullPath: '/mythology/'
+      preLoaderRoute: typeof MythologyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mythology/$slug': {
+      id: '/mythology/$slug'
+      path: '/mythology/$slug'
+      fullPath: '/mythology/$slug'
+      preLoaderRoute: typeof MythologySlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories/$slug': {
+      id: '/categories/$slug'
+      path: '/categories/$slug'
+      fullPath: '/categories/$slug'
+      preLoaderRoute: typeof CategoriesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bestiary/$id': {
+      id: '/bestiary/$id'
+      path: '/$id'
+      fullPath: '/bestiary/$id'
+      preLoaderRoute: typeof BestiaryIdRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
   }
 }
 
+interface BestiaryRouteChildren {
+  BestiaryIdRoute: typeof BestiaryIdRoute
+}
+
+const BestiaryRouteChildren: BestiaryRouteChildren = {
+  BestiaryIdRoute: BestiaryIdRoute,
+}
+
+const BestiaryRouteWithChildren = BestiaryRoute._addFileChildren(
+  BestiaryRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BestiaryRoute: BestiaryRouteWithChildren,
+  ForbiddenRoute: ForbiddenRoute,
+  MapRoute: MapRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  CategoriesSlugRoute: CategoriesSlugRoute,
+  MythologySlugRoute: MythologySlugRoute,
+  MythologyIndexRoute: MythologyIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
