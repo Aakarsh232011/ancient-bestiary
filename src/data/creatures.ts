@@ -354,6 +354,32 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["A heart light as a feather"],
   }),
+  c({
+    id: "apep", name: "Apep", epithet: "The Serpent of Chaos",
+    mythology: "Egyptian", category: "Underworld Beasts",
+    rarity: "Mythic", threat: "Cataclysmic",
+    habitat: ["The Western Horizon"], region: "Duat",
+    symbol: "𓆙", palette: ["#3a0d0d", "#0a0202"],
+    lore: "Every night Apep coils beneath the world to swallow Ra's solar barque. Each dawn the gods must cut him to pieces — and each dusk he is whole again, hungry, hateful, eternal.",
+    powers: [
+      { name: "Sun-Eating Coil", desc: "Crushes light from the sky itself." },
+      { name: "Endless Return", desc: "Reforms with every sunset, regardless of the wounds dealt." },
+    ],
+    weaknesses: ["The spear of Set", "Spells of the Book of Apophis"],
+  }),
+  c({
+    id: "khepri", name: "Khepri", epithet: "Scarab of the Rising Sun",
+    mythology: "Egyptian", category: "Celestial Creatures",
+    rarity: "Legendary", threat: "Benign",
+    habitat: ["Eastern Horizon"], region: "Nile Valley",
+    symbol: "𓆣", palette: ["#1f6b3a", "#04150a"],
+    lore: "A great scarab that rolls the sun across the morning sky as a dung-beetle rolls its sphere. He is the daily promise that the world will be reborn from the dark.",
+    powers: [
+      { name: "Dawn-Rolling", desc: "Lifts the disk of Ra above the horizon each morning." },
+      { name: "Self-Creation", desc: "Births himself anew from no parent, as the sun does." },
+    ],
+    weaknesses: ["Eclipses", "The shadow of Apep"],
+  }),
 
   // ───── JAPANESE ─────
   c({
