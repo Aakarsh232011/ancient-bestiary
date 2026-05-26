@@ -551,6 +551,32 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["Discord in the realm"],
   }),
+  c({
+    id: "bai-ze", name: "Bai Ze", epithet: "The All-Knowing Beast",
+    mythology: "Chinese", category: "Sacred Beasts",
+    rarity: "Mythic", threat: "Benign",
+    habitat: ["Sacred Mountain of Kunlun"], region: "Middle Kingdom",
+    symbol: "白", palette: ["#e8e3c8", "#3a3322"],
+    lore: "A lion-bodied beast with nine eyes and six horns, said to speak every human tongue. To the Yellow Emperor he dictated the names and natures of eleven thousand five hundred and twenty spirits.",
+    powers: [
+      { name: "Omniscient Tongue", desc: "Names every demon, ghost, and god that walks the world." },
+      { name: "Ward of the Sage", desc: "Its likeness on a banner repels misfortune." },
+    ],
+    weaknesses: ["A questioner without virtue"],
+  }),
+  c({
+    id: "pixiu", name: "Pixiu", epithet: "Devourer of Treasure",
+    mythology: "Chinese", category: "Sacred Beasts",
+    rarity: "Legendary", threat: "Moderate",
+    habitat: ["Imperial Tombs", "Counting Houses"], region: "Middle Kingdom",
+    symbol: "貔", palette: ["#a87632", "#241405"],
+    lore: "Winged lion-dragon with no anus — it consumes wealth eternally and never lets a coin escape. Cherished by merchants; cursed by tax collectors.",
+    powers: [
+      { name: "Endless Hoarding", desc: "Draws gold to itself from every horizon." },
+      { name: "Ward Against Misfortune", desc: "Devours bad luck before it reaches its owner." },
+    ],
+    weaknesses: ["A turned head", "Greed of its master"],
+  }),
 
   // ───── MESOPOTAMIAN ─────
   c({
