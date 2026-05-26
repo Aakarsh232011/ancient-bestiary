@@ -616,6 +616,32 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["The four winds in her mouth"],
   }),
+  c({
+    id: "mushussu", name: "Mušḫuššu", epithet: "Dragon of Marduk",
+    mythology: "Mesopotamian", category: "Dragons",
+    rarity: "Legendary", threat: "Dangerous",
+    habitat: ["Ishtar Gate", "Babylon's Walls"], region: "Fertile Crescent",
+    symbol: "𒈩", palette: ["#3a5a73", "#06121c"],
+    lore: "Serpent-necked, lion-pawed, eagle-taloned — the heraldic beast of Marduk that flanks the Ishtar Gate of Babylon. It walks beside the storm-god into every divine war.",
+    powers: [
+      { name: "Storm-March", desc: "Strides at Marduk's heel as lightning splits the field." },
+      { name: "Gate-Glare", desc: "Its painted gaze on a wall halts invaders mid-step." },
+    ],
+    weaknesses: ["The fall of its city"],
+  }),
+  c({
+    id: "gallu", name: "Gallu", epithet: "Demons of the Underworld Steppe",
+    mythology: "Mesopotamian", category: "Underworld Beasts",
+    rarity: "Rare", threat: "Dangerous",
+    habitat: ["Kur, the Land of No Return"], region: "Underworld",
+    symbol: "𒀴", palette: ["#3a1f3a", "#08040a"],
+    lore: "Seven hounds with no faces, sent up from Kur to drag the dead — or the living — back into the dust. When Inanna fled, the gallu pursued her until a substitute was found.",
+    powers: [
+      { name: "Soul-Drag", desc: "Hauls any named target down into the underworld." },
+      { name: "Faceless Hunt", desc: "Cannot be reasoned with, distracted, or bribed." },
+    ],
+    weaknesses: ["A willing substitute", "The intercession of Enki"],
+  }),
 
   // ───── FORBIDDEN ─────
   c({
