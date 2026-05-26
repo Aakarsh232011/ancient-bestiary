@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { MagicCursor } from "@/components/MagicCursor";
 
 import appCss from "../styles.css?url";
 
