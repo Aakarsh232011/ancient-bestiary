@@ -302,6 +302,19 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["The eagle atop Yggdrasil"],
   }),
+  c({
+    id: "huginn-muninn", name: "Huginn & Muninn", epithet: "Thought and Memory",
+    mythology: "Norse", category: "Celestial Creatures",
+    rarity: "Rare", threat: "Benign",
+    habitat: ["Asgard's Spires"], region: "The Nine Realms",
+    symbol: "ᚱ", palette: ["#2a2a3a", "#06070c"],
+    lore: "Twin ravens that fly across Midgard each dawn and return at dusk to whisper every secret of the realms into Odin's ear. Should they fail to return, the All-Father fears for thought itself.",
+    powers: [
+      { name: "All-Sight Flight", desc: "See every corner of the nine worlds in a single day." },
+      { name: "Tongue of Odin", desc: "Recite a perfect record of all they have witnessed." },
+    ],
+    weaknesses: ["Silence imposed by sorcery"],
+  }),
 
   // ───── EGYPTIAN ─────
   c({
