@@ -104,9 +104,10 @@ export function MagicCursor() {
       {pulses.map((p) => (
         <div
           key={p.id}
-          className="mc-pulse"
-          style={{ transform: `translate3d(${p.x}px, ${p.y}px, 0)` }}
-        />
+          style={{ position: "absolute", top: 0, left: 0, transform: `translate3d(${p.x}px, ${p.y}px, 0)` }}
+        >
+          <div className="mc-pulse" />
+        </div>
       ))}
     </div>
   );
