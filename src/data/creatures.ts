@@ -433,6 +433,19 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["A polite bow", "Cucumbers as bribes"],
   }),
+  c({
+    id: "orochi", name: "Yamata-no-Orochi", epithet: "Eight-Headed, Eight-Tailed Doom",
+    mythology: "Japanese", category: "Dragons",
+    rarity: "Mythic", threat: "Cataclysmic",
+    habitat: ["Mountains of Izumo"], region: "Japanese Highlands",
+    symbol: "八", palette: ["#5a1f3a", "#0f0509"],
+    lore: "A serpent so vast its eight heads spanned eight valleys, its body draped with cedars and moss. Susanoo lured it with eight vats of sake and split it head-from-head — finding the sword Kusanagi within its tail.",
+    powers: [
+      { name: "Eight-Fold Devouring", desc: "Eight maws strike at once across a battlefield." },
+      { name: "Moss-Mountain Hide", desc: "Forests grow upon its back; arrows take root, not flesh." },
+    ],
+    weaknesses: ["Wine of unbearable strength", "A blade hidden in its tail"],
+  }),
 
   // ───── CELTIC ─────
   c({
@@ -459,8 +472,48 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["A lost skin"],
   }),
+  c({
+    id: "each-uisge", name: "Each-Uisge", epithet: "The Water Horse",
+    mythology: "Celtic", category: "Sea Monsters",
+    rarity: "Legendary", threat: "Dangerous",
+    habitat: ["Highland Lochs"], region: "Scottish Highlands",
+    symbol: "♞", palette: ["#1f3a5a", "#04101c"],
+    lore: "Appears as a docile horse on the shoreline. The moment a rider mounts, its skin becomes adhesive — it bolts into the loch and devours all but the liver, which floats ashore by morning.",
+    powers: [
+      { name: "Adhesive Hide", desc: "Pulls any who touch it beneath the water." },
+      { name: "Shapeshift", desc: "Becomes pony, stallion, or comely youth at will." },
+    ],
+    weaknesses: ["Bridle of iron and silver"],
+  }),
+  c({
+    id: "banshee", name: "Banshee", epithet: "Wailing Woman of the Sídhe",
+    mythology: "Celtic", category: "Underworld Beasts",
+    rarity: "Rare", threat: "Moderate",
+    habitat: ["Ancestral Ruins"], region: "Ireland",
+    symbol: "𓂀", palette: ["#5a3a73", "#0e0818"],
+    lore: "A keening spirit attached to the oldest families. To hear her cry beneath your window at midnight is to know that one beneath your roof will not see the dawn.",
+    powers: [
+      { name: "Death Knell", desc: "Foretells the passing of any soul she knows by name." },
+      { name: "Veil Walk", desc: "Crosses between the living and the Otherworld unseen." },
+    ],
+    weaknesses: ["A spoken blessing", "The breaking of dawn"],
+  }),
+  c({
+    id: "dagda-stag", name: "Cernunnos's Stag", epithet: "Antlered Lord of the Greenwood",
+    mythology: "Celtic", category: "Forest Spirits",
+    rarity: "Legendary", threat: "Benign",
+    habitat: ["Sacred Groves"], region: "Gaul & Britain",
+    symbol: "ᚷ", palette: ["#3a5a2a", "#0a1208"],
+    lore: "A white stag whose antlers branch into every season at once — spring leaf, summer bough, autumn ember, winter bone. Hunters who pursue it find themselves seven years older when they return.",
+    powers: [
+      { name: "Seasons-in-One-Crown", desc: "Bends time within its grove." },
+      { name: "Greenwarden", desc: "Every beast of the forest answers its call." },
+    ],
+    weaknesses: ["Iron axes on holy nights"],
+  }),
 
   // ───── CHINESE ─────
+
   c({
     id: "long", name: "Long", epithet: "Imperial Dragon of the Five Claws",
     mythology: "Chinese", category: "Dragons",
