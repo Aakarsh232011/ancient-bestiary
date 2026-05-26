@@ -302,6 +302,19 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["The eagle atop Yggdrasil"],
   }),
+  c({
+    id: "huginn-muninn", name: "Huginn & Muninn", epithet: "Thought and Memory",
+    mythology: "Norse", category: "Celestial Creatures",
+    rarity: "Rare", threat: "Benign",
+    habitat: ["Asgard's Spires"], region: "The Nine Realms",
+    symbol: "ᚱ", palette: ["#2a2a3a", "#06070c"],
+    lore: "Twin ravens that fly across Midgard each dawn and return at dusk to whisper every secret of the realms into Odin's ear. Should they fail to return, the All-Father fears for thought itself.",
+    powers: [
+      { name: "All-Sight Flight", desc: "See every corner of the nine worlds in a single day." },
+      { name: "Tongue of Odin", desc: "Recite a perfect record of all they have witnessed." },
+    ],
+    weaknesses: ["Silence imposed by sorcery"],
+  }),
 
   // ───── EGYPTIAN ─────
   c({
@@ -340,6 +353,32 @@ export const creatures: Creature[] = [
       { name: "Soul Devouring", desc: "Erases the unworthy from all rebirth." },
     ],
     weaknesses: ["A heart light as a feather"],
+  }),
+  c({
+    id: "apep", name: "Apep", epithet: "The Serpent of Chaos",
+    mythology: "Egyptian", category: "Underworld Beasts",
+    rarity: "Mythic", threat: "Cataclysmic",
+    habitat: ["The Western Horizon"], region: "Duat",
+    symbol: "𓆙", palette: ["#3a0d0d", "#0a0202"],
+    lore: "Every night Apep coils beneath the world to swallow Ra's solar barque. Each dawn the gods must cut him to pieces — and each dusk he is whole again, hungry, hateful, eternal.",
+    powers: [
+      { name: "Sun-Eating Coil", desc: "Crushes light from the sky itself." },
+      { name: "Endless Return", desc: "Reforms with every sunset, regardless of the wounds dealt." },
+    ],
+    weaknesses: ["The spear of Set", "Spells of the Book of Apophis"],
+  }),
+  c({
+    id: "khepri", name: "Khepri", epithet: "Scarab of the Rising Sun",
+    mythology: "Egyptian", category: "Celestial Creatures",
+    rarity: "Legendary", threat: "Benign",
+    habitat: ["Eastern Horizon"], region: "Nile Valley",
+    symbol: "𓆣", palette: ["#1f6b3a", "#04150a"],
+    lore: "A great scarab that rolls the sun across the morning sky as a dung-beetle rolls its sphere. He is the daily promise that the world will be reborn from the dark.",
+    powers: [
+      { name: "Dawn-Rolling", desc: "Lifts the disk of Ra above the horizon each morning." },
+      { name: "Self-Creation", desc: "Births himself anew from no parent, as the sun does." },
+    ],
+    weaknesses: ["Eclipses", "The shadow of Apep"],
   }),
 
   // ───── JAPANESE ─────
@@ -394,6 +433,19 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["A polite bow", "Cucumbers as bribes"],
   }),
+  c({
+    id: "orochi", name: "Yamata-no-Orochi", epithet: "Eight-Headed, Eight-Tailed Doom",
+    mythology: "Japanese", category: "Dragons",
+    rarity: "Mythic", threat: "Cataclysmic",
+    habitat: ["Mountains of Izumo"], region: "Japanese Highlands",
+    symbol: "八", palette: ["#5a1f3a", "#0f0509"],
+    lore: "A serpent so vast its eight heads spanned eight valleys, its body draped with cedars and moss. Susanoo lured it with eight vats of sake and split it head-from-head — finding the sword Kusanagi within its tail.",
+    powers: [
+      { name: "Eight-Fold Devouring", desc: "Eight maws strike at once across a battlefield." },
+      { name: "Moss-Mountain Hide", desc: "Forests grow upon its back; arrows take root, not flesh." },
+    ],
+    weaknesses: ["Wine of unbearable strength", "A blade hidden in its tail"],
+  }),
 
   // ───── CELTIC ─────
   c({
@@ -420,8 +472,48 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["A lost skin"],
   }),
+  c({
+    id: "each-uisge", name: "Each-Uisge", epithet: "The Water Horse",
+    mythology: "Celtic", category: "Sea Monsters",
+    rarity: "Legendary", threat: "Dangerous",
+    habitat: ["Highland Lochs"], region: "Scottish Highlands",
+    symbol: "♞", palette: ["#1f3a5a", "#04101c"],
+    lore: "Appears as a docile horse on the shoreline. The moment a rider mounts, its skin becomes adhesive — it bolts into the loch and devours all but the liver, which floats ashore by morning.",
+    powers: [
+      { name: "Adhesive Hide", desc: "Pulls any who touch it beneath the water." },
+      { name: "Shapeshift", desc: "Becomes pony, stallion, or comely youth at will." },
+    ],
+    weaknesses: ["Bridle of iron and silver"],
+  }),
+  c({
+    id: "banshee", name: "Banshee", epithet: "Wailing Woman of the Sídhe",
+    mythology: "Celtic", category: "Underworld Beasts",
+    rarity: "Rare", threat: "Moderate",
+    habitat: ["Ancestral Ruins"], region: "Ireland",
+    symbol: "𓂀", palette: ["#5a3a73", "#0e0818"],
+    lore: "A keening spirit attached to the oldest families. To hear her cry beneath your window at midnight is to know that one beneath your roof will not see the dawn.",
+    powers: [
+      { name: "Death Knell", desc: "Foretells the passing of any soul she knows by name." },
+      { name: "Veil Walk", desc: "Crosses between the living and the Otherworld unseen." },
+    ],
+    weaknesses: ["A spoken blessing", "The breaking of dawn"],
+  }),
+  c({
+    id: "dagda-stag", name: "Cernunnos's Stag", epithet: "Antlered Lord of the Greenwood",
+    mythology: "Celtic", category: "Forest Spirits",
+    rarity: "Legendary", threat: "Benign",
+    habitat: ["Sacred Groves"], region: "Gaul & Britain",
+    symbol: "ᚷ", palette: ["#3a5a2a", "#0a1208"],
+    lore: "A white stag whose antlers branch into every season at once — spring leaf, summer bough, autumn ember, winter bone. Hunters who pursue it find themselves seven years older when they return.",
+    powers: [
+      { name: "Seasons-in-One-Crown", desc: "Bends time within its grove." },
+      { name: "Greenwarden", desc: "Every beast of the forest answers its call." },
+    ],
+    weaknesses: ["Iron axes on holy nights"],
+  }),
 
   // ───── CHINESE ─────
+
   c({
     id: "long", name: "Long", epithet: "Imperial Dragon of the Five Claws",
     mythology: "Chinese", category: "Dragons",
@@ -458,6 +550,32 @@ export const creatures: Creature[] = [
       { name: "Harmony Cry", desc: "Restores peace to warring lands." },
     ],
     weaknesses: ["Discord in the realm"],
+  }),
+  c({
+    id: "bai-ze", name: "Bai Ze", epithet: "The All-Knowing Beast",
+    mythology: "Chinese", category: "Sacred Beasts",
+    rarity: "Mythic", threat: "Benign",
+    habitat: ["Sacred Mountain of Kunlun"], region: "Middle Kingdom",
+    symbol: "白", palette: ["#e8e3c8", "#3a3322"],
+    lore: "A lion-bodied beast with nine eyes and six horns, said to speak every human tongue. To the Yellow Emperor he dictated the names and natures of eleven thousand five hundred and twenty spirits.",
+    powers: [
+      { name: "Omniscient Tongue", desc: "Names every demon, ghost, and god that walks the world." },
+      { name: "Ward of the Sage", desc: "Its likeness on a banner repels misfortune." },
+    ],
+    weaknesses: ["A questioner without virtue"],
+  }),
+  c({
+    id: "pixiu", name: "Pixiu", epithet: "Devourer of Treasure",
+    mythology: "Chinese", category: "Sacred Beasts",
+    rarity: "Legendary", threat: "Moderate",
+    habitat: ["Imperial Tombs", "Counting Houses"], region: "Middle Kingdom",
+    symbol: "貔", palette: ["#a87632", "#241405"],
+    lore: "Winged lion-dragon with no anus — it consumes wealth eternally and never lets a coin escape. Cherished by merchants; cursed by tax collectors.",
+    powers: [
+      { name: "Endless Hoarding", desc: "Draws gold to itself from every horizon." },
+      { name: "Ward Against Misfortune", desc: "Devours bad luck before it reaches its owner." },
+    ],
+    weaknesses: ["A turned head", "Greed of its master"],
   }),
 
   // ───── MESOPOTAMIAN ─────
@@ -497,6 +615,32 @@ export const creatures: Creature[] = [
       { name: "Chaos Spawn", desc: "Births eleven monstrous champions on a whim." },
     ],
     weaknesses: ["The four winds in her mouth"],
+  }),
+  c({
+    id: "mushussu", name: "Mušḫuššu", epithet: "Dragon of Marduk",
+    mythology: "Mesopotamian", category: "Dragons",
+    rarity: "Legendary", threat: "Dangerous",
+    habitat: ["Ishtar Gate", "Babylon's Walls"], region: "Fertile Crescent",
+    symbol: "𒈩", palette: ["#3a5a73", "#06121c"],
+    lore: "Serpent-necked, lion-pawed, eagle-taloned — the heraldic beast of Marduk that flanks the Ishtar Gate of Babylon. It walks beside the storm-god into every divine war.",
+    powers: [
+      { name: "Storm-March", desc: "Strides at Marduk's heel as lightning splits the field." },
+      { name: "Gate-Glare", desc: "Its painted gaze on a wall halts invaders mid-step." },
+    ],
+    weaknesses: ["The fall of its city"],
+  }),
+  c({
+    id: "gallu", name: "Gallu", epithet: "Demons of the Underworld Steppe",
+    mythology: "Mesopotamian", category: "Underworld Beasts",
+    rarity: "Rare", threat: "Dangerous",
+    habitat: ["Kur, the Land of No Return"], region: "Underworld",
+    symbol: "𒀴", palette: ["#3a1f3a", "#08040a"],
+    lore: "Seven hounds with no faces, sent up from Kur to drag the dead — or the living — back into the dust. When Inanna fled, the gallu pursued her until a substitute was found.",
+    powers: [
+      { name: "Soul-Drag", desc: "Hauls any named target down into the underworld." },
+      { name: "Faceless Hunt", desc: "Cannot be reasoned with, distracted, or bribed." },
+    ],
+    weaknesses: ["A willing substitute", "The intercession of Enki"],
   }),
 
   // ───── FORBIDDEN ─────

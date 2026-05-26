@@ -158,4 +158,121 @@
   }
 
   .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+  @keyframes page-enter {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .page-enter { animation: page-enter 0.5s ease-out both; }
+
+  @keyframes ce-rise {
+    0%   { transform: translateY(0) scale(1); opacity: 0; }
+    20%  { opacity: 1; }
+    100% { transform: translateY(-260px) scale(0.4); opacity: 0; }
+  }
+  .ce-rise { animation: ce-rise linear infinite; }
+
+  @keyframes ce-fall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+    15%  { opacity: 1; }
+    100% { transform: translateY(380px) rotate(180deg); opacity: 0; }
+  }
+  .ce-fall { animation: ce-fall linear infinite; }
+
+  @keyframes ce-ripple {
+    0%   { transform: translateX(-30%) scaleX(0.4); opacity: 0; }
+    50%  { opacity: 0.9; }
+    100% { transform: translateX(120%) scaleX(1.4); opacity: 0; }
+  }
+  .ce-ripple { animation: ce-ripple ease-in-out infinite; }
+
+  @keyframes ce-drift {
+    0%,100% { transform: translateX(0) translateY(0); opacity: 0.3; }
+    50%     { transform: translateX(-20px) translateY(-10px); opacity: 0.7; }
+  }
+  .ce-drift { animation: ce-drift ease-in-out infinite; }
+
+  @keyframes ce-flash {
+    0%, 92%, 100% { opacity: 0; }
+    94%, 98%      { opacity: 1; }
+  }
+  .ce-flash { animation: ce-flash linear infinite; }
+
+  @keyframes ce-glow-pulse {
+    0%,100% { opacity: 0.3; transform: scale(0.9); }
+    50%     { opacity: 1;   transform: scale(1.2); }
+  }
+  .ce-glow-pulse { animation: ce-glow-pulse ease-in-out infinite; }
+
+  html.magic-cursor-on,
+  html.magic-cursor-on body,
+  html.magic-cursor-on * { cursor: none !important; }
+
+  .mc-trail {
+    position: absolute; top: 0; left: 0;
+    margin-left: -3px; margin-top: -3px;
+    border-radius: 50%;
+    background: radial-gradient(circle, oklch(0.85 0.14 85 / 0.9), transparent 70%);
+    box-shadow: 0 0 8px oklch(0.85 0.14 85 / 0.6);
+    will-change: transform, opacity;
+  }
+
+  .mc-core {
+    position: absolute; top: 0; left: 0;
+    width: 24px; height: 24px;
+    margin-left: -12px; margin-top: -12px;
+    display: flex; align-items: center; justify-content: center;
+    transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease;
+    will-change: transform;
+  }
+  .mc-rune {
+    font-family: "Cinzel", serif;
+    color: var(--gold);
+    font-size: 14px;
+    text-shadow: 0 0 8px oklch(0.85 0.14 85 / 0.9), 0 0 18px oklch(0.85 0.14 85 / 0.55);
+    animation: ce-glow-pulse 2s ease-in-out infinite;
+  }
+  .mc-core--hover {
+    width: 56px; height: 56px;
+    margin-left: -28px; margin-top: -28px;
+  }
+  .mc-core--hover::before {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    border: 1px solid oklch(0.85 0.14 85 / 0.7);
+    box-shadow: 0 0 18px oklch(0.85 0.14 85 / 0.6), inset 0 0 12px oklch(0.85 0.14 85 / 0.35);
+  }
+  .mc-sigil {
+    position: absolute; inset: 0;
+    animation: mc-spin 6s linear infinite;
+    font-family: "Cinzel", serif;
+    color: var(--gold);
+    text-shadow: 0 0 6px oklch(0.85 0.14 85 / 0.9);
+  }
+  .mc-sigil-glyph {
+    position: absolute;
+    top: 50%; left: 50%;
+    font-size: 10px;
+    transform-origin: 0 0;
+  }
+  @keyframes mc-spin { to { transform: rotate(360deg); } }
+
+  .mc-pulse {
+    position: absolute; top: 0; left: 0;
+    width: 12px; height: 12px;
+    margin-left: -6px; margin-top: -6px;
+    border-radius: 50%;
+    border: 2px solid oklch(0.85 0.14 85 / 0.9);
+    box-shadow: 0 0 14px oklch(0.85 0.14 85 / 0.7);
+    animation: mc-pulse 0.7s ease-out forwards;
+  }
+  @keyframes mc-pulse {
+    0%   { transform: scale(0.4); opacity: 1; }
+    100% { transform: scale(8); opacity: 0; }
+  }
+
+  @media (pointer: coarse) {
+    html.magic-cursor-on, html.magic-cursor-on body, html.magic-cursor-on * { cursor: auto !important; }
+  }
 }
