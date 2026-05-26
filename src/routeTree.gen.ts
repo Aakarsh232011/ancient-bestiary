@@ -17,6 +17,54 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as MythologyIndexRouteImport } from './routes/mythology.index'
 import { Route as MythologySlugRouteImport } from './routes/mythology.$slug'
 import { Route as CategoriesSlugRouteImport } from './routes/categories.$slug'
+import { Route as BestiaryVanaraRouteImport } from './routes/bestiary.vanara'
+import { Route as BestiaryValiRouteImport } from './routes/bestiary.vali'
+import { Route as BestiaryTiamatRouteImport } from './routes/bestiary.tiamat'
+import { Route as BestiaryTenguRouteImport } from './routes/bestiary.tengu'
+import { Route as BestiarySphinxRouteImport } from './routes/bestiary.sphinx'
+import { Route as BestiarySleipnirRouteImport } from './routes/bestiary.sleipnir'
+import { Route as BestiarySharabhaRouteImport } from './routes/bestiary.sharabha'
+import { Route as BestiarySelkieRouteImport } from './routes/bestiary.selkie'
+import { Route as BestiaryRyuRouteImport } from './routes/bestiary.ryu'
+import { Route as BestiaryQilinRouteImport } from './routes/bestiary.qilin'
+import { Route as BestiaryPixiuRouteImport } from './routes/bestiary.pixiu'
+import { Route as BestiaryPegasusRouteImport } from './routes/bestiary.pegasus'
+import { Route as BestiaryOuroborosRouteImport } from './routes/bestiary.ouroboros'
+import { Route as BestiaryOrochiRouteImport } from './routes/bestiary.orochi'
+import { Route as BestiaryNidhoggRouteImport } from './routes/bestiary.nidhogg'
+import { Route as BestiaryNagaRouteImport } from './routes/bestiary.naga'
+import { Route as BestiaryMushussuRouteImport } from './routes/bestiary.mushussu'
+import { Route as BestiaryMinotaurRouteImport } from './routes/bestiary.minotaur'
+import { Route as BestiaryMakaraRouteImport } from './routes/bestiary.makara'
+import { Route as BestiaryLongRouteImport } from './routes/bestiary.long'
+import { Route as BestiaryLeviathanRouteImport } from './routes/bestiary.leviathan'
+import { Route as BestiaryLamassuRouteImport } from './routes/bestiary.lamassu'
+import { Route as BestiaryKitsuneRouteImport } from './routes/bestiary.kitsune'
+import { Route as BestiaryKinnaraRouteImport } from './routes/bestiary.kinnara'
+import { Route as BestiaryKhepriRouteImport } from './routes/bestiary.khepri'
+import { Route as BestiaryKappaRouteImport } from './routes/bestiary.kappa'
+import { Route as BestiaryKamadhenuRouteImport } from './routes/bestiary.kamadhenu'
+import { Route as BestiaryJormungandrRouteImport } from './routes/bestiary.jormungandr'
+import { Route as BestiaryHydraRouteImport } from './routes/bestiary.hydra'
+import { Route as BestiaryHuginnMuninnRouteImport } from './routes/bestiary.huginn-muninn'
+import { Route as BestiaryGarudaRouteImport } from './routes/bestiary.garuda'
+import { Route as BestiaryGandharvaRouteImport } from './routes/bestiary.gandharva'
+import { Route as BestiaryGalluRouteImport } from './routes/bestiary.gallu'
+import { Route as BestiaryFenrirRouteImport } from './routes/bestiary.fenrir'
+import { Route as BestiaryFenghuangRouteImport } from './routes/bestiary.fenghuang'
+import { Route as BestiaryEachUisgeRouteImport } from './routes/bestiary.each-uisge'
+import { Route as BestiaryDagdaStagRouteImport } from './routes/bestiary.dagda-stag'
+import { Route as BestiaryCuSithRouteImport } from './routes/bestiary.cu-sith'
+import { Route as BestiaryChimeraRouteImport } from './routes/bestiary.chimera'
+import { Route as BestiaryCerberusRouteImport } from './routes/bestiary.cerberus'
+import { Route as BestiaryBennuRouteImport } from './routes/bestiary.bennu'
+import { Route as BestiaryBehemothRouteImport } from './routes/bestiary.behemoth'
+import { Route as BestiaryBansheeRouteImport } from './routes/bestiary.banshee'
+import { Route as BestiaryBaiZeRouteImport } from './routes/bestiary.bai-ze'
+import { Route as BestiaryApepRouteImport } from './routes/bestiary.apep'
+import { Route as BestiaryAnzuRouteImport } from './routes/bestiary.anzu'
+import { Route as BestiaryAmmitRouteImport } from './routes/bestiary.ammit'
+import { Route as BestiaryAiravataRouteImport } from './routes/bestiary.airavata'
 import { Route as BestiaryIdRouteImport } from './routes/bestiary.$id'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -59,6 +107,246 @@ const CategoriesSlugRoute = CategoriesSlugRouteImport.update({
   path: '/categories/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BestiaryVanaraRoute = BestiaryVanaraRouteImport.update({
+  id: '/vanara',
+  path: '/vanara',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryValiRoute = BestiaryValiRouteImport.update({
+  id: '/vali',
+  path: '/vali',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryTiamatRoute = BestiaryTiamatRouteImport.update({
+  id: '/tiamat',
+  path: '/tiamat',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryTenguRoute = BestiaryTenguRouteImport.update({
+  id: '/tengu',
+  path: '/tengu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiarySphinxRoute = BestiarySphinxRouteImport.update({
+  id: '/sphinx',
+  path: '/sphinx',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiarySleipnirRoute = BestiarySleipnirRouteImport.update({
+  id: '/sleipnir',
+  path: '/sleipnir',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiarySharabhaRoute = BestiarySharabhaRouteImport.update({
+  id: '/sharabha',
+  path: '/sharabha',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiarySelkieRoute = BestiarySelkieRouteImport.update({
+  id: '/selkie',
+  path: '/selkie',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryRyuRoute = BestiaryRyuRouteImport.update({
+  id: '/ryu',
+  path: '/ryu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryQilinRoute = BestiaryQilinRouteImport.update({
+  id: '/qilin',
+  path: '/qilin',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryPixiuRoute = BestiaryPixiuRouteImport.update({
+  id: '/pixiu',
+  path: '/pixiu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryPegasusRoute = BestiaryPegasusRouteImport.update({
+  id: '/pegasus',
+  path: '/pegasus',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryOuroborosRoute = BestiaryOuroborosRouteImport.update({
+  id: '/ouroboros',
+  path: '/ouroboros',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryOrochiRoute = BestiaryOrochiRouteImport.update({
+  id: '/orochi',
+  path: '/orochi',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryNidhoggRoute = BestiaryNidhoggRouteImport.update({
+  id: '/nidhogg',
+  path: '/nidhogg',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryNagaRoute = BestiaryNagaRouteImport.update({
+  id: '/naga',
+  path: '/naga',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryMushussuRoute = BestiaryMushussuRouteImport.update({
+  id: '/mushussu',
+  path: '/mushussu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryMinotaurRoute = BestiaryMinotaurRouteImport.update({
+  id: '/minotaur',
+  path: '/minotaur',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryMakaraRoute = BestiaryMakaraRouteImport.update({
+  id: '/makara',
+  path: '/makara',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryLongRoute = BestiaryLongRouteImport.update({
+  id: '/long',
+  path: '/long',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryLeviathanRoute = BestiaryLeviathanRouteImport.update({
+  id: '/leviathan',
+  path: '/leviathan',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryLamassuRoute = BestiaryLamassuRouteImport.update({
+  id: '/lamassu',
+  path: '/lamassu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryKitsuneRoute = BestiaryKitsuneRouteImport.update({
+  id: '/kitsune',
+  path: '/kitsune',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryKinnaraRoute = BestiaryKinnaraRouteImport.update({
+  id: '/kinnara',
+  path: '/kinnara',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryKhepriRoute = BestiaryKhepriRouteImport.update({
+  id: '/khepri',
+  path: '/khepri',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryKappaRoute = BestiaryKappaRouteImport.update({
+  id: '/kappa',
+  path: '/kappa',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryKamadhenuRoute = BestiaryKamadhenuRouteImport.update({
+  id: '/kamadhenu',
+  path: '/kamadhenu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryJormungandrRoute = BestiaryJormungandrRouteImport.update({
+  id: '/jormungandr',
+  path: '/jormungandr',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryHydraRoute = BestiaryHydraRouteImport.update({
+  id: '/hydra',
+  path: '/hydra',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryHuginnMuninnRoute = BestiaryHuginnMuninnRouteImport.update({
+  id: '/huginn-muninn',
+  path: '/huginn-muninn',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryGarudaRoute = BestiaryGarudaRouteImport.update({
+  id: '/garuda',
+  path: '/garuda',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryGandharvaRoute = BestiaryGandharvaRouteImport.update({
+  id: '/gandharva',
+  path: '/gandharva',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryGalluRoute = BestiaryGalluRouteImport.update({
+  id: '/gallu',
+  path: '/gallu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryFenrirRoute = BestiaryFenrirRouteImport.update({
+  id: '/fenrir',
+  path: '/fenrir',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryFenghuangRoute = BestiaryFenghuangRouteImport.update({
+  id: '/fenghuang',
+  path: '/fenghuang',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryEachUisgeRoute = BestiaryEachUisgeRouteImport.update({
+  id: '/each-uisge',
+  path: '/each-uisge',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryDagdaStagRoute = BestiaryDagdaStagRouteImport.update({
+  id: '/dagda-stag',
+  path: '/dagda-stag',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryCuSithRoute = BestiaryCuSithRouteImport.update({
+  id: '/cu-sith',
+  path: '/cu-sith',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryChimeraRoute = BestiaryChimeraRouteImport.update({
+  id: '/chimera',
+  path: '/chimera',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryCerberusRoute = BestiaryCerberusRouteImport.update({
+  id: '/cerberus',
+  path: '/cerberus',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryBennuRoute = BestiaryBennuRouteImport.update({
+  id: '/bennu',
+  path: '/bennu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryBehemothRoute = BestiaryBehemothRouteImport.update({
+  id: '/behemoth',
+  path: '/behemoth',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryBansheeRoute = BestiaryBansheeRouteImport.update({
+  id: '/banshee',
+  path: '/banshee',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryBaiZeRoute = BestiaryBaiZeRouteImport.update({
+  id: '/bai-ze',
+  path: '/bai-ze',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryApepRoute = BestiaryApepRouteImport.update({
+  id: '/apep',
+  path: '/apep',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryAnzuRoute = BestiaryAnzuRouteImport.update({
+  id: '/anzu',
+  path: '/anzu',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryAmmitRoute = BestiaryAmmitRouteImport.update({
+  id: '/ammit',
+  path: '/ammit',
+  getParentRoute: () => BestiaryRoute,
+} as any)
+const BestiaryAiravataRoute = BestiaryAiravataRouteImport.update({
+  id: '/airavata',
+  path: '/airavata',
+  getParentRoute: () => BestiaryRoute,
+} as any)
 const BestiaryIdRoute = BestiaryIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -72,6 +360,54 @@ export interface FileRoutesByFullPath {
   '/map': typeof MapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bestiary/$id': typeof BestiaryIdRoute
+  '/bestiary/airavata': typeof BestiaryAiravataRoute
+  '/bestiary/ammit': typeof BestiaryAmmitRoute
+  '/bestiary/anzu': typeof BestiaryAnzuRoute
+  '/bestiary/apep': typeof BestiaryApepRoute
+  '/bestiary/bai-ze': typeof BestiaryBaiZeRoute
+  '/bestiary/banshee': typeof BestiaryBansheeRoute
+  '/bestiary/behemoth': typeof BestiaryBehemothRoute
+  '/bestiary/bennu': typeof BestiaryBennuRoute
+  '/bestiary/cerberus': typeof BestiaryCerberusRoute
+  '/bestiary/chimera': typeof BestiaryChimeraRoute
+  '/bestiary/cu-sith': typeof BestiaryCuSithRoute
+  '/bestiary/dagda-stag': typeof BestiaryDagdaStagRoute
+  '/bestiary/each-uisge': typeof BestiaryEachUisgeRoute
+  '/bestiary/fenghuang': typeof BestiaryFenghuangRoute
+  '/bestiary/fenrir': typeof BestiaryFenrirRoute
+  '/bestiary/gallu': typeof BestiaryGalluRoute
+  '/bestiary/gandharva': typeof BestiaryGandharvaRoute
+  '/bestiary/garuda': typeof BestiaryGarudaRoute
+  '/bestiary/huginn-muninn': typeof BestiaryHuginnMuninnRoute
+  '/bestiary/hydra': typeof BestiaryHydraRoute
+  '/bestiary/jormungandr': typeof BestiaryJormungandrRoute
+  '/bestiary/kamadhenu': typeof BestiaryKamadhenuRoute
+  '/bestiary/kappa': typeof BestiaryKappaRoute
+  '/bestiary/khepri': typeof BestiaryKhepriRoute
+  '/bestiary/kinnara': typeof BestiaryKinnaraRoute
+  '/bestiary/kitsune': typeof BestiaryKitsuneRoute
+  '/bestiary/lamassu': typeof BestiaryLamassuRoute
+  '/bestiary/leviathan': typeof BestiaryLeviathanRoute
+  '/bestiary/long': typeof BestiaryLongRoute
+  '/bestiary/makara': typeof BestiaryMakaraRoute
+  '/bestiary/minotaur': typeof BestiaryMinotaurRoute
+  '/bestiary/mushussu': typeof BestiaryMushussuRoute
+  '/bestiary/naga': typeof BestiaryNagaRoute
+  '/bestiary/nidhogg': typeof BestiaryNidhoggRoute
+  '/bestiary/orochi': typeof BestiaryOrochiRoute
+  '/bestiary/ouroboros': typeof BestiaryOuroborosRoute
+  '/bestiary/pegasus': typeof BestiaryPegasusRoute
+  '/bestiary/pixiu': typeof BestiaryPixiuRoute
+  '/bestiary/qilin': typeof BestiaryQilinRoute
+  '/bestiary/ryu': typeof BestiaryRyuRoute
+  '/bestiary/selkie': typeof BestiarySelkieRoute
+  '/bestiary/sharabha': typeof BestiarySharabhaRoute
+  '/bestiary/sleipnir': typeof BestiarySleipnirRoute
+  '/bestiary/sphinx': typeof BestiarySphinxRoute
+  '/bestiary/tengu': typeof BestiaryTenguRoute
+  '/bestiary/tiamat': typeof BestiaryTiamatRoute
+  '/bestiary/vali': typeof BestiaryValiRoute
+  '/bestiary/vanara': typeof BestiaryVanaraRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/mythology/$slug': typeof MythologySlugRoute
   '/mythology/': typeof MythologyIndexRoute
@@ -83,6 +419,54 @@ export interface FileRoutesByTo {
   '/map': typeof MapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bestiary/$id': typeof BestiaryIdRoute
+  '/bestiary/airavata': typeof BestiaryAiravataRoute
+  '/bestiary/ammit': typeof BestiaryAmmitRoute
+  '/bestiary/anzu': typeof BestiaryAnzuRoute
+  '/bestiary/apep': typeof BestiaryApepRoute
+  '/bestiary/bai-ze': typeof BestiaryBaiZeRoute
+  '/bestiary/banshee': typeof BestiaryBansheeRoute
+  '/bestiary/behemoth': typeof BestiaryBehemothRoute
+  '/bestiary/bennu': typeof BestiaryBennuRoute
+  '/bestiary/cerberus': typeof BestiaryCerberusRoute
+  '/bestiary/chimera': typeof BestiaryChimeraRoute
+  '/bestiary/cu-sith': typeof BestiaryCuSithRoute
+  '/bestiary/dagda-stag': typeof BestiaryDagdaStagRoute
+  '/bestiary/each-uisge': typeof BestiaryEachUisgeRoute
+  '/bestiary/fenghuang': typeof BestiaryFenghuangRoute
+  '/bestiary/fenrir': typeof BestiaryFenrirRoute
+  '/bestiary/gallu': typeof BestiaryGalluRoute
+  '/bestiary/gandharva': typeof BestiaryGandharvaRoute
+  '/bestiary/garuda': typeof BestiaryGarudaRoute
+  '/bestiary/huginn-muninn': typeof BestiaryHuginnMuninnRoute
+  '/bestiary/hydra': typeof BestiaryHydraRoute
+  '/bestiary/jormungandr': typeof BestiaryJormungandrRoute
+  '/bestiary/kamadhenu': typeof BestiaryKamadhenuRoute
+  '/bestiary/kappa': typeof BestiaryKappaRoute
+  '/bestiary/khepri': typeof BestiaryKhepriRoute
+  '/bestiary/kinnara': typeof BestiaryKinnaraRoute
+  '/bestiary/kitsune': typeof BestiaryKitsuneRoute
+  '/bestiary/lamassu': typeof BestiaryLamassuRoute
+  '/bestiary/leviathan': typeof BestiaryLeviathanRoute
+  '/bestiary/long': typeof BestiaryLongRoute
+  '/bestiary/makara': typeof BestiaryMakaraRoute
+  '/bestiary/minotaur': typeof BestiaryMinotaurRoute
+  '/bestiary/mushussu': typeof BestiaryMushussuRoute
+  '/bestiary/naga': typeof BestiaryNagaRoute
+  '/bestiary/nidhogg': typeof BestiaryNidhoggRoute
+  '/bestiary/orochi': typeof BestiaryOrochiRoute
+  '/bestiary/ouroboros': typeof BestiaryOuroborosRoute
+  '/bestiary/pegasus': typeof BestiaryPegasusRoute
+  '/bestiary/pixiu': typeof BestiaryPixiuRoute
+  '/bestiary/qilin': typeof BestiaryQilinRoute
+  '/bestiary/ryu': typeof BestiaryRyuRoute
+  '/bestiary/selkie': typeof BestiarySelkieRoute
+  '/bestiary/sharabha': typeof BestiarySharabhaRoute
+  '/bestiary/sleipnir': typeof BestiarySleipnirRoute
+  '/bestiary/sphinx': typeof BestiarySphinxRoute
+  '/bestiary/tengu': typeof BestiaryTenguRoute
+  '/bestiary/tiamat': typeof BestiaryTiamatRoute
+  '/bestiary/vali': typeof BestiaryValiRoute
+  '/bestiary/vanara': typeof BestiaryVanaraRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/mythology/$slug': typeof MythologySlugRoute
   '/mythology': typeof MythologyIndexRoute
@@ -95,6 +479,54 @@ export interface FileRoutesById {
   '/map': typeof MapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bestiary/$id': typeof BestiaryIdRoute
+  '/bestiary/airavata': typeof BestiaryAiravataRoute
+  '/bestiary/ammit': typeof BestiaryAmmitRoute
+  '/bestiary/anzu': typeof BestiaryAnzuRoute
+  '/bestiary/apep': typeof BestiaryApepRoute
+  '/bestiary/bai-ze': typeof BestiaryBaiZeRoute
+  '/bestiary/banshee': typeof BestiaryBansheeRoute
+  '/bestiary/behemoth': typeof BestiaryBehemothRoute
+  '/bestiary/bennu': typeof BestiaryBennuRoute
+  '/bestiary/cerberus': typeof BestiaryCerberusRoute
+  '/bestiary/chimera': typeof BestiaryChimeraRoute
+  '/bestiary/cu-sith': typeof BestiaryCuSithRoute
+  '/bestiary/dagda-stag': typeof BestiaryDagdaStagRoute
+  '/bestiary/each-uisge': typeof BestiaryEachUisgeRoute
+  '/bestiary/fenghuang': typeof BestiaryFenghuangRoute
+  '/bestiary/fenrir': typeof BestiaryFenrirRoute
+  '/bestiary/gallu': typeof BestiaryGalluRoute
+  '/bestiary/gandharva': typeof BestiaryGandharvaRoute
+  '/bestiary/garuda': typeof BestiaryGarudaRoute
+  '/bestiary/huginn-muninn': typeof BestiaryHuginnMuninnRoute
+  '/bestiary/hydra': typeof BestiaryHydraRoute
+  '/bestiary/jormungandr': typeof BestiaryJormungandrRoute
+  '/bestiary/kamadhenu': typeof BestiaryKamadhenuRoute
+  '/bestiary/kappa': typeof BestiaryKappaRoute
+  '/bestiary/khepri': typeof BestiaryKhepriRoute
+  '/bestiary/kinnara': typeof BestiaryKinnaraRoute
+  '/bestiary/kitsune': typeof BestiaryKitsuneRoute
+  '/bestiary/lamassu': typeof BestiaryLamassuRoute
+  '/bestiary/leviathan': typeof BestiaryLeviathanRoute
+  '/bestiary/long': typeof BestiaryLongRoute
+  '/bestiary/makara': typeof BestiaryMakaraRoute
+  '/bestiary/minotaur': typeof BestiaryMinotaurRoute
+  '/bestiary/mushussu': typeof BestiaryMushussuRoute
+  '/bestiary/naga': typeof BestiaryNagaRoute
+  '/bestiary/nidhogg': typeof BestiaryNidhoggRoute
+  '/bestiary/orochi': typeof BestiaryOrochiRoute
+  '/bestiary/ouroboros': typeof BestiaryOuroborosRoute
+  '/bestiary/pegasus': typeof BestiaryPegasusRoute
+  '/bestiary/pixiu': typeof BestiaryPixiuRoute
+  '/bestiary/qilin': typeof BestiaryQilinRoute
+  '/bestiary/ryu': typeof BestiaryRyuRoute
+  '/bestiary/selkie': typeof BestiarySelkieRoute
+  '/bestiary/sharabha': typeof BestiarySharabhaRoute
+  '/bestiary/sleipnir': typeof BestiarySleipnirRoute
+  '/bestiary/sphinx': typeof BestiarySphinxRoute
+  '/bestiary/tengu': typeof BestiaryTenguRoute
+  '/bestiary/tiamat': typeof BestiaryTiamatRoute
+  '/bestiary/vali': typeof BestiaryValiRoute
+  '/bestiary/vanara': typeof BestiaryVanaraRoute
   '/categories/$slug': typeof CategoriesSlugRoute
   '/mythology/$slug': typeof MythologySlugRoute
   '/mythology/': typeof MythologyIndexRoute
@@ -108,6 +540,54 @@ export interface FileRouteTypes {
     | '/map'
     | '/sitemap.xml'
     | '/bestiary/$id'
+    | '/bestiary/airavata'
+    | '/bestiary/ammit'
+    | '/bestiary/anzu'
+    | '/bestiary/apep'
+    | '/bestiary/bai-ze'
+    | '/bestiary/banshee'
+    | '/bestiary/behemoth'
+    | '/bestiary/bennu'
+    | '/bestiary/cerberus'
+    | '/bestiary/chimera'
+    | '/bestiary/cu-sith'
+    | '/bestiary/dagda-stag'
+    | '/bestiary/each-uisge'
+    | '/bestiary/fenghuang'
+    | '/bestiary/fenrir'
+    | '/bestiary/gallu'
+    | '/bestiary/gandharva'
+    | '/bestiary/garuda'
+    | '/bestiary/huginn-muninn'
+    | '/bestiary/hydra'
+    | '/bestiary/jormungandr'
+    | '/bestiary/kamadhenu'
+    | '/bestiary/kappa'
+    | '/bestiary/khepri'
+    | '/bestiary/kinnara'
+    | '/bestiary/kitsune'
+    | '/bestiary/lamassu'
+    | '/bestiary/leviathan'
+    | '/bestiary/long'
+    | '/bestiary/makara'
+    | '/bestiary/minotaur'
+    | '/bestiary/mushussu'
+    | '/bestiary/naga'
+    | '/bestiary/nidhogg'
+    | '/bestiary/orochi'
+    | '/bestiary/ouroboros'
+    | '/bestiary/pegasus'
+    | '/bestiary/pixiu'
+    | '/bestiary/qilin'
+    | '/bestiary/ryu'
+    | '/bestiary/selkie'
+    | '/bestiary/sharabha'
+    | '/bestiary/sleipnir'
+    | '/bestiary/sphinx'
+    | '/bestiary/tengu'
+    | '/bestiary/tiamat'
+    | '/bestiary/vali'
+    | '/bestiary/vanara'
     | '/categories/$slug'
     | '/mythology/$slug'
     | '/mythology/'
@@ -119,6 +599,54 @@ export interface FileRouteTypes {
     | '/map'
     | '/sitemap.xml'
     | '/bestiary/$id'
+    | '/bestiary/airavata'
+    | '/bestiary/ammit'
+    | '/bestiary/anzu'
+    | '/bestiary/apep'
+    | '/bestiary/bai-ze'
+    | '/bestiary/banshee'
+    | '/bestiary/behemoth'
+    | '/bestiary/bennu'
+    | '/bestiary/cerberus'
+    | '/bestiary/chimera'
+    | '/bestiary/cu-sith'
+    | '/bestiary/dagda-stag'
+    | '/bestiary/each-uisge'
+    | '/bestiary/fenghuang'
+    | '/bestiary/fenrir'
+    | '/bestiary/gallu'
+    | '/bestiary/gandharva'
+    | '/bestiary/garuda'
+    | '/bestiary/huginn-muninn'
+    | '/bestiary/hydra'
+    | '/bestiary/jormungandr'
+    | '/bestiary/kamadhenu'
+    | '/bestiary/kappa'
+    | '/bestiary/khepri'
+    | '/bestiary/kinnara'
+    | '/bestiary/kitsune'
+    | '/bestiary/lamassu'
+    | '/bestiary/leviathan'
+    | '/bestiary/long'
+    | '/bestiary/makara'
+    | '/bestiary/minotaur'
+    | '/bestiary/mushussu'
+    | '/bestiary/naga'
+    | '/bestiary/nidhogg'
+    | '/bestiary/orochi'
+    | '/bestiary/ouroboros'
+    | '/bestiary/pegasus'
+    | '/bestiary/pixiu'
+    | '/bestiary/qilin'
+    | '/bestiary/ryu'
+    | '/bestiary/selkie'
+    | '/bestiary/sharabha'
+    | '/bestiary/sleipnir'
+    | '/bestiary/sphinx'
+    | '/bestiary/tengu'
+    | '/bestiary/tiamat'
+    | '/bestiary/vali'
+    | '/bestiary/vanara'
     | '/categories/$slug'
     | '/mythology/$slug'
     | '/mythology'
@@ -130,6 +658,54 @@ export interface FileRouteTypes {
     | '/map'
     | '/sitemap.xml'
     | '/bestiary/$id'
+    | '/bestiary/airavata'
+    | '/bestiary/ammit'
+    | '/bestiary/anzu'
+    | '/bestiary/apep'
+    | '/bestiary/bai-ze'
+    | '/bestiary/banshee'
+    | '/bestiary/behemoth'
+    | '/bestiary/bennu'
+    | '/bestiary/cerberus'
+    | '/bestiary/chimera'
+    | '/bestiary/cu-sith'
+    | '/bestiary/dagda-stag'
+    | '/bestiary/each-uisge'
+    | '/bestiary/fenghuang'
+    | '/bestiary/fenrir'
+    | '/bestiary/gallu'
+    | '/bestiary/gandharva'
+    | '/bestiary/garuda'
+    | '/bestiary/huginn-muninn'
+    | '/bestiary/hydra'
+    | '/bestiary/jormungandr'
+    | '/bestiary/kamadhenu'
+    | '/bestiary/kappa'
+    | '/bestiary/khepri'
+    | '/bestiary/kinnara'
+    | '/bestiary/kitsune'
+    | '/bestiary/lamassu'
+    | '/bestiary/leviathan'
+    | '/bestiary/long'
+    | '/bestiary/makara'
+    | '/bestiary/minotaur'
+    | '/bestiary/mushussu'
+    | '/bestiary/naga'
+    | '/bestiary/nidhogg'
+    | '/bestiary/orochi'
+    | '/bestiary/ouroboros'
+    | '/bestiary/pegasus'
+    | '/bestiary/pixiu'
+    | '/bestiary/qilin'
+    | '/bestiary/ryu'
+    | '/bestiary/selkie'
+    | '/bestiary/sharabha'
+    | '/bestiary/sleipnir'
+    | '/bestiary/sphinx'
+    | '/bestiary/tengu'
+    | '/bestiary/tiamat'
+    | '/bestiary/vali'
+    | '/bestiary/vanara'
     | '/categories/$slug'
     | '/mythology/$slug'
     | '/mythology/'
@@ -204,6 +780,342 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoriesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bestiary/vanara': {
+      id: '/bestiary/vanara'
+      path: '/vanara'
+      fullPath: '/bestiary/vanara'
+      preLoaderRoute: typeof BestiaryVanaraRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/vali': {
+      id: '/bestiary/vali'
+      path: '/vali'
+      fullPath: '/bestiary/vali'
+      preLoaderRoute: typeof BestiaryValiRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/tiamat': {
+      id: '/bestiary/tiamat'
+      path: '/tiamat'
+      fullPath: '/bestiary/tiamat'
+      preLoaderRoute: typeof BestiaryTiamatRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/tengu': {
+      id: '/bestiary/tengu'
+      path: '/tengu'
+      fullPath: '/bestiary/tengu'
+      preLoaderRoute: typeof BestiaryTenguRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/sphinx': {
+      id: '/bestiary/sphinx'
+      path: '/sphinx'
+      fullPath: '/bestiary/sphinx'
+      preLoaderRoute: typeof BestiarySphinxRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/sleipnir': {
+      id: '/bestiary/sleipnir'
+      path: '/sleipnir'
+      fullPath: '/bestiary/sleipnir'
+      preLoaderRoute: typeof BestiarySleipnirRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/sharabha': {
+      id: '/bestiary/sharabha'
+      path: '/sharabha'
+      fullPath: '/bestiary/sharabha'
+      preLoaderRoute: typeof BestiarySharabhaRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/selkie': {
+      id: '/bestiary/selkie'
+      path: '/selkie'
+      fullPath: '/bestiary/selkie'
+      preLoaderRoute: typeof BestiarySelkieRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/ryu': {
+      id: '/bestiary/ryu'
+      path: '/ryu'
+      fullPath: '/bestiary/ryu'
+      preLoaderRoute: typeof BestiaryRyuRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/qilin': {
+      id: '/bestiary/qilin'
+      path: '/qilin'
+      fullPath: '/bestiary/qilin'
+      preLoaderRoute: typeof BestiaryQilinRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/pixiu': {
+      id: '/bestiary/pixiu'
+      path: '/pixiu'
+      fullPath: '/bestiary/pixiu'
+      preLoaderRoute: typeof BestiaryPixiuRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/pegasus': {
+      id: '/bestiary/pegasus'
+      path: '/pegasus'
+      fullPath: '/bestiary/pegasus'
+      preLoaderRoute: typeof BestiaryPegasusRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/ouroboros': {
+      id: '/bestiary/ouroboros'
+      path: '/ouroboros'
+      fullPath: '/bestiary/ouroboros'
+      preLoaderRoute: typeof BestiaryOuroborosRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/orochi': {
+      id: '/bestiary/orochi'
+      path: '/orochi'
+      fullPath: '/bestiary/orochi'
+      preLoaderRoute: typeof BestiaryOrochiRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/nidhogg': {
+      id: '/bestiary/nidhogg'
+      path: '/nidhogg'
+      fullPath: '/bestiary/nidhogg'
+      preLoaderRoute: typeof BestiaryNidhoggRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/naga': {
+      id: '/bestiary/naga'
+      path: '/naga'
+      fullPath: '/bestiary/naga'
+      preLoaderRoute: typeof BestiaryNagaRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/mushussu': {
+      id: '/bestiary/mushussu'
+      path: '/mushussu'
+      fullPath: '/bestiary/mushussu'
+      preLoaderRoute: typeof BestiaryMushussuRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/minotaur': {
+      id: '/bestiary/minotaur'
+      path: '/minotaur'
+      fullPath: '/bestiary/minotaur'
+      preLoaderRoute: typeof BestiaryMinotaurRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/makara': {
+      id: '/bestiary/makara'
+      path: '/makara'
+      fullPath: '/bestiary/makara'
+      preLoaderRoute: typeof BestiaryMakaraRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/long': {
+      id: '/bestiary/long'
+      path: '/long'
+      fullPath: '/bestiary/long'
+      preLoaderRoute: typeof BestiaryLongRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/leviathan': {
+      id: '/bestiary/leviathan'
+      path: '/leviathan'
+      fullPath: '/bestiary/leviathan'
+      preLoaderRoute: typeof BestiaryLeviathanRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/lamassu': {
+      id: '/bestiary/lamassu'
+      path: '/lamassu'
+      fullPath: '/bestiary/lamassu'
+      preLoaderRoute: typeof BestiaryLamassuRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/kitsune': {
+      id: '/bestiary/kitsune'
+      path: '/kitsune'
+      fullPath: '/bestiary/kitsune'
+      preLoaderRoute: typeof BestiaryKitsuneRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/kinnara': {
+      id: '/bestiary/kinnara'
+      path: '/kinnara'
+      fullPath: '/bestiary/kinnara'
+      preLoaderRoute: typeof BestiaryKinnaraRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/khepri': {
+      id: '/bestiary/khepri'
+      path: '/khepri'
+      fullPath: '/bestiary/khepri'
+      preLoaderRoute: typeof BestiaryKhepriRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/kappa': {
+      id: '/bestiary/kappa'
+      path: '/kappa'
+      fullPath: '/bestiary/kappa'
+      preLoaderRoute: typeof BestiaryKappaRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/kamadhenu': {
+      id: '/bestiary/kamadhenu'
+      path: '/kamadhenu'
+      fullPath: '/bestiary/kamadhenu'
+      preLoaderRoute: typeof BestiaryKamadhenuRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/jormungandr': {
+      id: '/bestiary/jormungandr'
+      path: '/jormungandr'
+      fullPath: '/bestiary/jormungandr'
+      preLoaderRoute: typeof BestiaryJormungandrRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/hydra': {
+      id: '/bestiary/hydra'
+      path: '/hydra'
+      fullPath: '/bestiary/hydra'
+      preLoaderRoute: typeof BestiaryHydraRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/huginn-muninn': {
+      id: '/bestiary/huginn-muninn'
+      path: '/huginn-muninn'
+      fullPath: '/bestiary/huginn-muninn'
+      preLoaderRoute: typeof BestiaryHuginnMuninnRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/garuda': {
+      id: '/bestiary/garuda'
+      path: '/garuda'
+      fullPath: '/bestiary/garuda'
+      preLoaderRoute: typeof BestiaryGarudaRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/gandharva': {
+      id: '/bestiary/gandharva'
+      path: '/gandharva'
+      fullPath: '/bestiary/gandharva'
+      preLoaderRoute: typeof BestiaryGandharvaRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/gallu': {
+      id: '/bestiary/gallu'
+      path: '/gallu'
+      fullPath: '/bestiary/gallu'
+      preLoaderRoute: typeof BestiaryGalluRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/fenrir': {
+      id: '/bestiary/fenrir'
+      path: '/fenrir'
+      fullPath: '/bestiary/fenrir'
+      preLoaderRoute: typeof BestiaryFenrirRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/fenghuang': {
+      id: '/bestiary/fenghuang'
+      path: '/fenghuang'
+      fullPath: '/bestiary/fenghuang'
+      preLoaderRoute: typeof BestiaryFenghuangRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/each-uisge': {
+      id: '/bestiary/each-uisge'
+      path: '/each-uisge'
+      fullPath: '/bestiary/each-uisge'
+      preLoaderRoute: typeof BestiaryEachUisgeRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/dagda-stag': {
+      id: '/bestiary/dagda-stag'
+      path: '/dagda-stag'
+      fullPath: '/bestiary/dagda-stag'
+      preLoaderRoute: typeof BestiaryDagdaStagRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/cu-sith': {
+      id: '/bestiary/cu-sith'
+      path: '/cu-sith'
+      fullPath: '/bestiary/cu-sith'
+      preLoaderRoute: typeof BestiaryCuSithRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/chimera': {
+      id: '/bestiary/chimera'
+      path: '/chimera'
+      fullPath: '/bestiary/chimera'
+      preLoaderRoute: typeof BestiaryChimeraRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/cerberus': {
+      id: '/bestiary/cerberus'
+      path: '/cerberus'
+      fullPath: '/bestiary/cerberus'
+      preLoaderRoute: typeof BestiaryCerberusRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/bennu': {
+      id: '/bestiary/bennu'
+      path: '/bennu'
+      fullPath: '/bestiary/bennu'
+      preLoaderRoute: typeof BestiaryBennuRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/behemoth': {
+      id: '/bestiary/behemoth'
+      path: '/behemoth'
+      fullPath: '/bestiary/behemoth'
+      preLoaderRoute: typeof BestiaryBehemothRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/banshee': {
+      id: '/bestiary/banshee'
+      path: '/banshee'
+      fullPath: '/bestiary/banshee'
+      preLoaderRoute: typeof BestiaryBansheeRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/bai-ze': {
+      id: '/bestiary/bai-ze'
+      path: '/bai-ze'
+      fullPath: '/bestiary/bai-ze'
+      preLoaderRoute: typeof BestiaryBaiZeRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/apep': {
+      id: '/bestiary/apep'
+      path: '/apep'
+      fullPath: '/bestiary/apep'
+      preLoaderRoute: typeof BestiaryApepRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/anzu': {
+      id: '/bestiary/anzu'
+      path: '/anzu'
+      fullPath: '/bestiary/anzu'
+      preLoaderRoute: typeof BestiaryAnzuRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/ammit': {
+      id: '/bestiary/ammit'
+      path: '/ammit'
+      fullPath: '/bestiary/ammit'
+      preLoaderRoute: typeof BestiaryAmmitRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
+    '/bestiary/airavata': {
+      id: '/bestiary/airavata'
+      path: '/airavata'
+      fullPath: '/bestiary/airavata'
+      preLoaderRoute: typeof BestiaryAiravataRouteImport
+      parentRoute: typeof BestiaryRoute
+    }
     '/bestiary/$id': {
       id: '/bestiary/$id'
       path: '/$id'
@@ -216,10 +1128,106 @@ declare module '@tanstack/react-router' {
 
 interface BestiaryRouteChildren {
   BestiaryIdRoute: typeof BestiaryIdRoute
+  BestiaryAiravataRoute: typeof BestiaryAiravataRoute
+  BestiaryAmmitRoute: typeof BestiaryAmmitRoute
+  BestiaryAnzuRoute: typeof BestiaryAnzuRoute
+  BestiaryApepRoute: typeof BestiaryApepRoute
+  BestiaryBaiZeRoute: typeof BestiaryBaiZeRoute
+  BestiaryBansheeRoute: typeof BestiaryBansheeRoute
+  BestiaryBehemothRoute: typeof BestiaryBehemothRoute
+  BestiaryBennuRoute: typeof BestiaryBennuRoute
+  BestiaryCerberusRoute: typeof BestiaryCerberusRoute
+  BestiaryChimeraRoute: typeof BestiaryChimeraRoute
+  BestiaryCuSithRoute: typeof BestiaryCuSithRoute
+  BestiaryDagdaStagRoute: typeof BestiaryDagdaStagRoute
+  BestiaryEachUisgeRoute: typeof BestiaryEachUisgeRoute
+  BestiaryFenghuangRoute: typeof BestiaryFenghuangRoute
+  BestiaryFenrirRoute: typeof BestiaryFenrirRoute
+  BestiaryGalluRoute: typeof BestiaryGalluRoute
+  BestiaryGandharvaRoute: typeof BestiaryGandharvaRoute
+  BestiaryGarudaRoute: typeof BestiaryGarudaRoute
+  BestiaryHuginnMuninnRoute: typeof BestiaryHuginnMuninnRoute
+  BestiaryHydraRoute: typeof BestiaryHydraRoute
+  BestiaryJormungandrRoute: typeof BestiaryJormungandrRoute
+  BestiaryKamadhenuRoute: typeof BestiaryKamadhenuRoute
+  BestiaryKappaRoute: typeof BestiaryKappaRoute
+  BestiaryKhepriRoute: typeof BestiaryKhepriRoute
+  BestiaryKinnaraRoute: typeof BestiaryKinnaraRoute
+  BestiaryKitsuneRoute: typeof BestiaryKitsuneRoute
+  BestiaryLamassuRoute: typeof BestiaryLamassuRoute
+  BestiaryLeviathanRoute: typeof BestiaryLeviathanRoute
+  BestiaryLongRoute: typeof BestiaryLongRoute
+  BestiaryMakaraRoute: typeof BestiaryMakaraRoute
+  BestiaryMinotaurRoute: typeof BestiaryMinotaurRoute
+  BestiaryMushussuRoute: typeof BestiaryMushussuRoute
+  BestiaryNagaRoute: typeof BestiaryNagaRoute
+  BestiaryNidhoggRoute: typeof BestiaryNidhoggRoute
+  BestiaryOrochiRoute: typeof BestiaryOrochiRoute
+  BestiaryOuroborosRoute: typeof BestiaryOuroborosRoute
+  BestiaryPegasusRoute: typeof BestiaryPegasusRoute
+  BestiaryPixiuRoute: typeof BestiaryPixiuRoute
+  BestiaryQilinRoute: typeof BestiaryQilinRoute
+  BestiaryRyuRoute: typeof BestiaryRyuRoute
+  BestiarySelkieRoute: typeof BestiarySelkieRoute
+  BestiarySharabhaRoute: typeof BestiarySharabhaRoute
+  BestiarySleipnirRoute: typeof BestiarySleipnirRoute
+  BestiarySphinxRoute: typeof BestiarySphinxRoute
+  BestiaryTenguRoute: typeof BestiaryTenguRoute
+  BestiaryTiamatRoute: typeof BestiaryTiamatRoute
+  BestiaryValiRoute: typeof BestiaryValiRoute
+  BestiaryVanaraRoute: typeof BestiaryVanaraRoute
 }
 
 const BestiaryRouteChildren: BestiaryRouteChildren = {
   BestiaryIdRoute: BestiaryIdRoute,
+  BestiaryAiravataRoute: BestiaryAiravataRoute,
+  BestiaryAmmitRoute: BestiaryAmmitRoute,
+  BestiaryAnzuRoute: BestiaryAnzuRoute,
+  BestiaryApepRoute: BestiaryApepRoute,
+  BestiaryBaiZeRoute: BestiaryBaiZeRoute,
+  BestiaryBansheeRoute: BestiaryBansheeRoute,
+  BestiaryBehemothRoute: BestiaryBehemothRoute,
+  BestiaryBennuRoute: BestiaryBennuRoute,
+  BestiaryCerberusRoute: BestiaryCerberusRoute,
+  BestiaryChimeraRoute: BestiaryChimeraRoute,
+  BestiaryCuSithRoute: BestiaryCuSithRoute,
+  BestiaryDagdaStagRoute: BestiaryDagdaStagRoute,
+  BestiaryEachUisgeRoute: BestiaryEachUisgeRoute,
+  BestiaryFenghuangRoute: BestiaryFenghuangRoute,
+  BestiaryFenrirRoute: BestiaryFenrirRoute,
+  BestiaryGalluRoute: BestiaryGalluRoute,
+  BestiaryGandharvaRoute: BestiaryGandharvaRoute,
+  BestiaryGarudaRoute: BestiaryGarudaRoute,
+  BestiaryHuginnMuninnRoute: BestiaryHuginnMuninnRoute,
+  BestiaryHydraRoute: BestiaryHydraRoute,
+  BestiaryJormungandrRoute: BestiaryJormungandrRoute,
+  BestiaryKamadhenuRoute: BestiaryKamadhenuRoute,
+  BestiaryKappaRoute: BestiaryKappaRoute,
+  BestiaryKhepriRoute: BestiaryKhepriRoute,
+  BestiaryKinnaraRoute: BestiaryKinnaraRoute,
+  BestiaryKitsuneRoute: BestiaryKitsuneRoute,
+  BestiaryLamassuRoute: BestiaryLamassuRoute,
+  BestiaryLeviathanRoute: BestiaryLeviathanRoute,
+  BestiaryLongRoute: BestiaryLongRoute,
+  BestiaryMakaraRoute: BestiaryMakaraRoute,
+  BestiaryMinotaurRoute: BestiaryMinotaurRoute,
+  BestiaryMushussuRoute: BestiaryMushussuRoute,
+  BestiaryNagaRoute: BestiaryNagaRoute,
+  BestiaryNidhoggRoute: BestiaryNidhoggRoute,
+  BestiaryOrochiRoute: BestiaryOrochiRoute,
+  BestiaryOuroborosRoute: BestiaryOuroborosRoute,
+  BestiaryPegasusRoute: BestiaryPegasusRoute,
+  BestiaryPixiuRoute: BestiaryPixiuRoute,
+  BestiaryQilinRoute: BestiaryQilinRoute,
+  BestiaryRyuRoute: BestiaryRyuRoute,
+  BestiarySelkieRoute: BestiarySelkieRoute,
+  BestiarySharabhaRoute: BestiarySharabhaRoute,
+  BestiarySleipnirRoute: BestiarySleipnirRoute,
+  BestiarySphinxRoute: BestiarySphinxRoute,
+  BestiaryTenguRoute: BestiaryTenguRoute,
+  BestiaryTiamatRoute: BestiaryTiamatRoute,
+  BestiaryValiRoute: BestiaryValiRoute,
+  BestiaryVanaraRoute: BestiaryVanaraRoute,
 }
 
 const BestiaryRouteWithChildren = BestiaryRoute._addFileChildren(
@@ -239,3 +1247,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
