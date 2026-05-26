@@ -119,6 +119,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <MagicCursor />
     </QueryClientProvider>
   );
 }
