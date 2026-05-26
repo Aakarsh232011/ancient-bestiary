@@ -48,10 +48,11 @@ function CreaturePage() {
           <Link to="/bestiary" className="font-rune text-[10px] text-gold/70 hover:text-gold">← The Archive</Link>
           <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 mt-6 items-center">
             <div
-              className="aspect-[4/5] rounded-md gold-frame border border-gold/30 flex items-center justify-center"
+              className="relative aspect-[4/5] rounded-md gold-frame border border-gold/30 overflow-hidden flex items-center justify-center"
               style={{ background: `radial-gradient(ellipse at center, ${a}, ${b})` }}
             >
-              <span className="font-display text-[10rem] leading-none text-gold/50 drop-shadow-[0_0_30px_rgba(212,160,23,0.5)]" aria-hidden>
+              <CreatureEffect creature={creature} />
+              <span className="relative font-display text-[10rem] leading-none text-gold/60 drop-shadow-[0_0_30px_rgba(212,160,23,0.6)]" aria-hidden>
                 {creature.symbol}
               </span>
             </div>
