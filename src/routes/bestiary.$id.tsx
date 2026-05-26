@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
+import { CreatureEffect } from "@/components/CreatureEffect";
 import { getCreature, publicCreatures } from "@/data/creatures";
 
 export const Route = createFileRoute("/bestiary/$id")({
