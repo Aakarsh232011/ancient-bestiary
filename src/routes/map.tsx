@@ -80,7 +80,7 @@ function MapPage() {
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                 {activeMatches.map(c => (
                   <Link
-                    key={c.id} to="/bestiary/$id" params={{ id: c.id }}
+                    key={c.id} to="/$id" params={{ id: c.id }}
                     className="aspect-square rounded border border-gold/20 hover:border-gold/60 flex flex-col items-center justify-center text-center p-2 transition"
                     style={{ background: `radial-gradient(ellipse, ${c.palette[0]}66, ${c.palette[1]})` }}
                   >
