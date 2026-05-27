@@ -7,7 +7,7 @@ import {
   type Mythology, type Category, type Rarity, type Threat,
 } from "@/data/creatures";
 
-export const Route = createFileRoute("/bestiary")({
+export const Route = createFileRoute("/bestiary/")({
   head: () => ({
     meta: [
       { title: "Bestiary — Ancient Bestiary" },
