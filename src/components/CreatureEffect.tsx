@@ -12,9 +12,10 @@ const idOverrides: Record<string, EffectKind> = {
   sharabha: "lightning", vali: "leaves", vanara: "leaves",
   // Greek
   hydra: "scales", cerberus: "shadow", pegasus: "feathers",
-  minotaur: "dust", chimera: "embers",
+  griffin: "feathers", minotaur: "dust", chimera: "embers",
+  dragon: "embers", phoenix: "embers",
   // Norse
-  fenrir: "shadow", jormungandr: "ocean", sleipnir: "lightning",
+  kraken: "ocean", fenrir: "shadow", jormungandr: "ocean", sleipnir: "lightning",
   nidhogg: "embers", "huginn-muninn": "feathers",
   // Egyptian
   sphinx: "dust", bennu: "embers", ammit: "shadow",
