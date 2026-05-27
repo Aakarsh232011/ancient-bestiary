@@ -226,6 +226,20 @@ export const creatures: Creature[] = [
     weaknesses: ["Pride of his rider"],
   }),
   c({
+    id: "griffin", name: "Griffin", epithet: "Gold-Warden of the High Aeries",
+    mythology: "Greek", category: "Sacred Beasts",
+    rarity: "Legendary", threat: "Dangerous",
+    habitat: ["Wind-Sheared Cliffs", "Gold Veins"], region: "Scythian Mountains",
+    symbol: "𓅓", palette: ["#d6a545", "#201006"],
+    lore: "Lion-bodied and eagle-crowned, the Griffin nests where mountain gold breaks through stone. It does not hoard from greed; it guards the metal of the sun from hands too small and hungry to hold it wisely.",
+    powers: [
+      { name: "Sun-Talon Dive", desc: "Falls from the clouds with enough force to split shields." },
+      { name: "Goldwake Cry", desc: "Reveals hidden ore and blinds thieves with reflected light." },
+      { name: "Royal Vigil", desc: "Keeps watch for days without sleep or hunger." },
+    ],
+    weaknesses: ["A gift freely offered", "Cloudless noon glare", "Broken trust with a rightful monarch"],
+  }),
+  c({
     id: "minotaur", name: "Minotaur", epithet: "The Bull of Knossos",
     mythology: "Greek", category: "Underworld Beasts",
     rarity: "Legendary", threat: "Dangerous",
@@ -250,8 +264,50 @@ export const creatures: Creature[] = [
     ],
     weaknesses: ["Molten lead", "Aerial attack"],
   }),
+  c({
+    id: "dragon", name: "Dragon", epithet: "The Gold-Hoard Wyrm",
+    mythology: "Greek", category: "Dragons",
+    rarity: "Mythic", threat: "Cataclysmic",
+    habitat: ["Volcanic Caverns", "Ancient Treasury Vaults"], region: "Colchis & the Black Sea",
+    symbol: "🐉", palette: ["#b3411f", "#160503"],
+    lore: "The old dragon is not a species but a calamity wearing scales: furnace-breath, bronze talons, and a mind patient enough to guard a sacred fleece for centuries. Kings call it a monster; priests call it a test placed at the edge of forbidden wealth.",
+    powers: [
+      { name: "Furnace Breath", desc: "Melts iron doors into rivers of slag." },
+      { name: "Hoard-Sense", desc: "Feels the theft of a single coin through leagues of stone." },
+      { name: "Scale Citadel", desc: "Turns blades unless they strike beneath the heart-plate." },
+    ],
+    weaknesses: ["A sleepless hero", "The soft scale beneath the left breast", "Flattery that becomes a riddle"],
+  }),
+  c({
+    id: "phoenix", name: "Phoenix", epithet: "The Reborn Flame",
+    mythology: "Egyptian", category: "Celestial Creatures",
+    rarity: "Mythic", threat: "Benign",
+    habitat: ["Sun Temples", "Ash Gardens"], region: "Heliopolis & Eastern Deserts",
+    symbol: "☀", palette: ["#f07a22", "#2a0702"],
+    lore: "At the end of a thousand years the Phoenix builds a nest of myrrh, cinnamon, and sacred cedar, then sings itself into fire. From the fragrant ash rises a bright-eyed chick carrying the memory of every dawn before it.",
+    powers: [
+      { name: "Rebirth Pyre", desc: "Returns from ash with wounds and curses burned away." },
+      { name: "Solar Benediction", desc: "Purifies plague, rot, and despair with a sweep of its wings." },
+      { name: "Ash Memory", desc: "Recalls the last words of every age it has survived." },
+    ],
+    weaknesses: ["Eternal night", "Rain gathered during an eclipse", "A nest built without sacred aromatics"],
+  }),
 
   // ───── NORSE ─────
+  c({
+    id: "kraken", name: "Kraken", epithet: "The Island Below",
+    mythology: "Norse", category: "Sea Monsters",
+    rarity: "Mythic", threat: "Cataclysmic",
+    habitat: ["Black Fjords", "Open Ocean Trenches"], region: "Northern Seas",
+    symbol: "≋", palette: ["#0e5f78", "#021018"],
+    lore: "Sailors first mistake the Kraken for land: a dark back rising from fog, ringed with gulls and weed. Then the island breathes, tentacles climb the mast, and the sea itself begins to close its fist around the ship.",
+    powers: [
+      { name: "Abyssal Grasp", desc: "Tentacles coil around hull, harbor, and lighthouse alike." },
+      { name: "Maelstrom Wake", desc: "Creates whirlpools that swallow entire fleets." },
+      { name: "Island Mimicry", desc: "Sleeps at the surface disguised as safe shore." },
+    ],
+    weaknesses: ["Still weather", "Harpoons carved with storm-runes", "The retreat of deep tides"],
+  }),
   c({
     id: "fenrir", name: "Fenrir", epithet: "The Unbound",
     mythology: "Norse", category: "Underworld Beasts",

@@ -53,7 +53,7 @@ function ForbiddenPage() {
           <section className="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {forbiddenCreatures.map(c => (
               <Link
-                key={c.id} to="/bestiary/$id" params={{ id: c.id }}
+                key={c.id} to="/$id" params={{ id: c.id }}
                 className="glass-card p-5 hover:-translate-y-1 transition border-blood/40"
                 style={{ borderColor: "rgba(180,40,30,0.35)" }}
               >

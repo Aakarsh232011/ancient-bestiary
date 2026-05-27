@@ -12,7 +12,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/", "/bestiary", "/mythology", "/map",
           ...mythologies.map(m => `/mythology/${m.id.toLowerCase()}`),
           ...categories.map(c => `/categories/${c.id.toLowerCase().replace(/\s+/g, "-")}`),
-          ...publicCreatures.map(c => `/bestiary/${c.id}`),
+          ...publicCreatures.map(c => `/${c.id}`),
         ];
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
