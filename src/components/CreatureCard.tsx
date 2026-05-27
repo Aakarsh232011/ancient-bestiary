@@ -12,7 +12,7 @@ export function CreatureCard({ creature }: { creature: Creature }) {
   const [a, b] = creature.palette;
   return (
     <Link
-      to="/bestiary/$id"
+      to="/$id"
       params={{ id: creature.id }}
       className="group glass-card gold-frame p-5 flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300"
     >
