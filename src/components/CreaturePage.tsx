@@ -29,9 +29,38 @@ const featuredProfiles: Record<string, VisualProfile> = {
   dragon: { kind: "dragon", scene: "A volcanic treasury where molten light shines between bronze scales", relic: "Gold sparks orbit the heart-scale and flare when the hoard is threatened.", funFact: "Dragon-slaying tales often hide a legal lesson: the hoard belongs to whoever survives the contract written in fire." },
 };
 
+const POLLI = "https://image.pollinations.ai/prompt/";
+const STYLE_SUFFIX = "ancient mythological manuscript illustration, golden ink, dark parchment, ornate codex, painterly, cinematic, intricate detail";
+
+function imgUrl(prompt: string, seed: number, w = 768, h = 768) {
+  const q = encodeURIComponent(`${prompt}, ${STYLE_SUFFIX}`);
+  return `${POLLI}${q}?width=${w}&height=${h}&seed=${seed}&nologo=true&model=flux`;
+}
+
+function seedFor(id: string) {
+  let s = 0; for (let i = 0; i < id.length; i++) s = (s * 31 + id.charCodeAt(i)) >>> 0;
+  return s % 100000;
+}
+
+function getCreatureImages(creature: Creature) {
+  const seed = seedFor(creature.id);
+  const base = `${creature.name}, ${creature.mythology} mythology, ${creature.epithet}`;
+  return {
+    hero: imgUrl(`${base}, full body, epic portrait, dramatic lighting`, seed, 1024, 1024),
+    scene: imgUrl(`${base} in ${creature.habitat[0]}, sweeping landscape`, seed + 1, 1280, 720),
+    gallery: [
+      imgUrl(`${base}, close-up of head and eyes, divine aura`, seed + 11, 640, 800),
+      imgUrl(`${base}, mid-action ${creature.powers[0]?.name ?? "ritual"}, glowing energy`, seed + 22, 640, 800),
+      imgUrl(`${creature.name} ancient temple relief, stone carving, ${creature.region}`, seed + 33, 640, 800),
+      imgUrl(`${base}, symbolic emblem on parchment, ${creature.symbol}`, seed + 44, 640, 800),
+    ],
+  };
+}
+
 export function CreaturePage({ creature }: { creature: Creature }) {
   const [a, b] = creature.palette;
   const profile = getVisualProfile(creature);
+  const images = getCreatureImages(creature);
   const related = creatures
     .filter(c => c.id !== creature.id && (c.mythology === creature.mythology || c.category === creature.category))
     .slice(0, 4);
@@ -41,11 +70,17 @@ export function CreaturePage({ creature }: { creature: Creature }) {
   return (
     <SiteShell>
       <section className={`creature-hero creature-hero--${profile.kind}`} style={style}>
+        <div
+          className="absolute inset-0 opacity-30 mix-blend-screen"
+          style={{ backgroundImage: `url(${images.scene})`, backgroundSize: "cover", backgroundPosition: "center" }}
+          aria-hidden
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" aria-hidden />
         <div className="absolute inset-0 fog opacity-35" aria-hidden />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-10 pb-14">
           <Link to="/bestiary" className="font-rune text-[10px] text-gold/70 hover:text-gold">← Return to the Archive</Link>
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-[minmax(320px,520px)_1fr] gap-10 items-center">
-            <CreatureArtwork creature={creature} profile={profile} />
+            <CreatureArtwork creature={creature} profile={profile} heroImage={images.hero} />
             <div className="max-w-2xl">
               <div className="font-rune text-xs text-gold/70">{creature.epithet}</div>
               <h1 className="font-display text-5xl sm:text-6xl md:text-7xl gold-gradient mt-2 leading-none">{creature.name}</h1>
@@ -75,6 +110,23 @@ export function CreaturePage({ creature }: { creature: Creature }) {
             <div className="font-rune text-[10px] text-gold/65">Detailed Lore</div>
             <p className="text-foreground/88 leading-relaxed mt-4 text-lg">{creature.lore}</p>
             <p className="text-muted-foreground leading-relaxed mt-4">{profile.relic}</p>
+          </div>
+
+          <div className="glass-card p-6 creature-manuscript">
+            <div className="font-rune text-[10px] text-gold/65 mb-4">Visions of the Codex</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {images.gallery.map((src, i) => (
+                <figure key={src} className="codex-plate" style={{ animationDelay: `${i * 0.08}s` }}>
+                  <img
+                    src={src}
+                    alt={`${creature.name} — illuminated plate ${i + 1}`}
+                    loading="lazy"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                  />
+                  <figcaption className="font-rune text-[9px] text-gold/70">Plate {String(i + 1).padStart(2, "0")}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -146,9 +198,16 @@ export function CreaturePage({ creature }: { creature: Creature }) {
   );
 }
 
-function CreatureArtwork({ creature, profile }: { creature: Creature; profile: VisualProfile }) {
+function CreatureArtwork({ creature, profile, heroImage }: { creature: Creature; profile: VisualProfile; heroImage: string }) {
   return (
     <div className={`creature-art creature-feature--${profile.kind}`} role="img" aria-label={`${creature.name} mythological artwork`}>
+      <img
+        src={heroImage}
+        alt={`${creature.name} portrait`}
+        className="creature-art__photo"
+        loading="eager"
+        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+      />
       <CreatureEffect creature={creature} />
       <div className="creature-art__ring" aria-hidden />
       <div className="creature-art__moon" aria-hidden />
@@ -161,10 +220,15 @@ function CreatureArtwork({ creature, profile }: { creature: Creature; profile: V
       <div className="creature-art__flame creature-art__flame--two" aria-hidden />
       <div className="creature-art__river" aria-hidden />
       <div className="creature-art__scale-field" aria-hidden />
+      <div className="creature-art__lava" aria-hidden />
+      <div className="creature-art__sand" aria-hidden />
+      <div className="creature-art__foxfire" aria-hidden />
+      <div className="creature-art__spiral" aria-hidden />
       <span className="creature-art__symbol" aria-hidden>{creature.symbol}</span>
     </div>
   );
 }
+
 
 function getVisualProfile(creature: Creature): VisualProfile {
   if (featuredProfiles[creature.id]) return featuredProfiles[creature.id];
