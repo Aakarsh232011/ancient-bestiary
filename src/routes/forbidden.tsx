@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteShell } from "@/components/SiteShell";
 import { forbiddenCreatures } from "@/data/creatures";
+import { creatureImage } from "@/lib/creature-image";
 import forbiddenImg from "@/assets/forbidden.jpg";
 
 export const Route = createFileRoute("/forbidden")({
@@ -54,14 +55,23 @@ function ForbiddenPage() {
             {forbiddenCreatures.map(c => (
               <Link
                 key={c.id} to="/$id" params={{ id: c.id }}
-                className="glass-card p-5 hover:-translate-y-1 transition border-blood/40"
+                className="group glass-card p-5 hover:-translate-y-1 transition border-blood/40"
                 style={{ borderColor: "rgba(180,40,30,0.35)" }}
               >
                 <div
-                  className="aspect-[4/5] rounded-md overflow-hidden border border-blood/30 flex items-center justify-center"
+                  className="aspect-[4/5] rounded-md overflow-hidden relative border border-blood/30 flex items-center justify-center"
                   style={{ background: `radial-gradient(ellipse, ${c.palette[0]}, ${c.palette[1]})` }}
                 >
-                  <span className="font-display text-[8rem] leading-none text-blood/40">{c.symbol}</span>
+                  <span className="absolute inset-0 flex items-center justify-center font-display text-[8rem] leading-none text-blood/30" aria-hidden>{c.symbol}</span>
+                  <img
+                    src={creatureImage(c)}
+                    alt={`${c.name} forbidden plate`}
+                    loading="lazy"
+                    className="relative z-[1] w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-500"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                  />
+                  <div className="absolute inset-0 z-[2] bg-gradient-to-t from-background/80 via-background/20 to-transparent" aria-hidden />
+                  <div className="absolute inset-0 z-[2] bg-blood/10 mix-blend-multiply" aria-hidden />
                 </div>
                 <div className="mt-4">
                   <div className="font-rune text-[10px] text-blood">{c.epithet}</div>
