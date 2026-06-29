@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Creature } from "@/data/creatures";
+import { creatureImage } from "@/lib/creature-image";
 
 const threatColor: Record<string, string> = {
   Benign: "text-emerald",
@@ -10,6 +11,7 @@ const threatColor: Record<string, string> = {
 
 export function CreatureCard({ creature }: { creature: Creature }) {
   const [a, b] = creature.palette;
+  const img = creatureImage(creature);
   return (
     <Link
       to="/$id"
@@ -21,15 +23,23 @@ export function CreatureCard({ creature }: { creature: Creature }) {
         style={{ background: `radial-gradient(ellipse at center, ${a}, ${b})` }}
       >
         <span
-          className="font-display text-[7rem] leading-none text-gold/30 group-hover:text-gold/60 transition-colors duration-500 drop-shadow-[0_0_20px_rgba(212,160,23,0.4)]"
+          className="absolute inset-0 flex items-center justify-center font-display text-[7rem] leading-none text-gold/25 drop-shadow-[0_0_20px_rgba(212,160,23,0.4)]"
           aria-hidden
         >
           {creature.symbol}
         </span>
-        <span className="absolute top-2 left-2 font-rune text-[10px] text-gold/80 bg-background/60 px-2 py-1 rounded">
+        <img
+          src={img}
+          alt={`${creature.name} portrait`}
+          loading="lazy"
+          className="relative z-[1] w-full h-full object-cover opacity-90 mix-blend-luminosity group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-500"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+        />
+        <div className="absolute inset-0 z-[2] bg-gradient-to-t from-background/70 via-transparent to-transparent" aria-hidden />
+        <span className="absolute top-2 left-2 z-[3] font-rune text-[10px] text-gold/90 bg-background/70 px-2 py-1 rounded">
           {creature.mythology}
         </span>
-        <span className={`absolute top-2 right-2 font-rune text-[10px] ${threatColor[creature.threat]} bg-background/60 px-2 py-1 rounded`}>
+        <span className={`absolute top-2 right-2 z-[3] font-rune text-[10px] ${threatColor[creature.threat]} bg-background/70 px-2 py-1 rounded`}>
           {creature.threat}
         </span>
       </div>
