@@ -51,10 +51,10 @@ function seedFor(id: string) {
 }
 
 function getCreatureImages(creature: Creature) {
-  const seed = seedFor(creature.id);
+  const hero = creatureHero(creature);
   return {
-    hero: creatureHero(creature),
-    scene: imgUrl(`${creature.name} in ${creature.habitat[0]}, sweeping landscape`, seed + 1, 1280, 720),
+    hero,
+    scene: hero,
     gallery: creatureGallery(creature),
   };
 }
