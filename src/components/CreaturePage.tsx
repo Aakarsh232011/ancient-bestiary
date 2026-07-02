@@ -3,6 +3,14 @@ import type { CSSProperties, ReactNode } from "react";
 import { SiteShell } from "@/components/SiteShell";
 import { CreatureEffect } from "@/components/CreatureEffect";
 import { creatures, type Creature } from "@/data/creatures";
+import { creatureHero, creatureGallery, pollinationsImage } from "@/lib/creature-image";
+
+function handleImgError(e: React.SyntheticEvent<HTMLImageElement>, fallback: string) {
+  const img = e.currentTarget;
+  if (img.dataset.fallback === "1") { img.style.visibility = "hidden"; return; }
+  img.dataset.fallback = "1";
+  img.src = fallback;
+}
 
 type CreatureStyle = CSSProperties & {
   "--creature-a": string;
@@ -29,31 +37,13 @@ const featuredProfiles: Record<string, VisualProfile> = {
   dragon: { kind: "dragon", scene: "A volcanic treasury where molten light shines between bronze scales", relic: "Gold sparks orbit the heart-scale and flare when the hoard is threatened.", funFact: "Dragon-slaying tales often hide a legal lesson: the hoard belongs to whoever survives the contract written in fire." },
 };
 
-const POLLI = "https://image.pollinations.ai/prompt/";
-const STYLE_SUFFIX = "ancient mythological manuscript illustration, golden ink, dark parchment, ornate codex, painterly, cinematic, intricate detail";
-
-function imgUrl(prompt: string, seed: number, w = 768, h = 768) {
-  const q = encodeURIComponent(`${prompt}, ${STYLE_SUFFIX}`);
-  return `${POLLI}${q}?width=${w}&height=${h}&seed=${seed}&nologo=true&model=flux`;
-}
-
-function seedFor(id: string) {
-  let s = 0; for (let i = 0; i < id.length; i++) s = (s * 31 + id.charCodeAt(i)) >>> 0;
-  return s % 100000;
-}
 
 function getCreatureImages(creature: Creature) {
-  const seed = seedFor(creature.id);
-  const base = `${creature.name}, ${creature.mythology} mythology, ${creature.epithet}`;
+  const hero = creatureHero(creature);
   return {
-    hero: imgUrl(`${base}, full body, epic portrait, dramatic lighting`, seed, 1024, 1024),
-    scene: imgUrl(`${base} in ${creature.habitat[0]}, sweeping landscape`, seed + 1, 1280, 720),
-    gallery: [
-      imgUrl(`${base}, close-up of head and eyes, divine aura`, seed + 11, 640, 800),
-      imgUrl(`${base}, mid-action ${creature.powers[0]?.name ?? "ritual"}, glowing energy`, seed + 22, 640, 800),
-      imgUrl(`${creature.name} ancient temple relief, stone carving, ${creature.region}`, seed + 33, 640, 800),
-      imgUrl(`${base}, symbolic emblem on parchment, ${creature.symbol}`, seed + 44, 640, 800),
-    ],
+    hero,
+    scene: hero,
+    gallery: creatureGallery(creature),
   };
 }
 
@@ -121,7 +111,7 @@ export function CreaturePage({ creature }: { creature: Creature }) {
                     src={src}
                     alt={`${creature.name} — illuminated plate ${i + 1}`}
                     loading="lazy"
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                    onError={(e) => handleImgError(e, pollinationsImage(creature, 640, 800))}
                   />
                   <figcaption className="font-rune text-[9px] text-gold/70">Plate {String(i + 1).padStart(2, "0")}</figcaption>
                 </figure>
@@ -206,7 +196,7 @@ function CreatureArtwork({ creature, profile, heroImage }: { creature: Creature;
         alt={`${creature.name} portrait`}
         className="creature-art__photo"
         loading="eager"
-        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+        onError={(e) => handleImgError(e, pollinationsImage(creature, 1024, 1024))}
       />
       <CreatureEffect creature={creature} />
       <div className="creature-art__ring" aria-hidden />

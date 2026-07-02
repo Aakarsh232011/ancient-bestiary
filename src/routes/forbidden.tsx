@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteShell } from "@/components/SiteShell";
 import { forbiddenCreatures } from "@/data/creatures";
-import { creatureImage } from "@/lib/creature-image";
+import { creatureImage, pollinationsImage } from "@/lib/creature-image";
 import forbiddenImg from "@/assets/forbidden.jpg";
 
 export const Route = createFileRoute("/forbidden")({
@@ -68,7 +68,11 @@ function ForbiddenPage() {
                     alt={`${c.name} forbidden plate`}
                     loading="lazy"
                     className="relative z-[1] w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-500"
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                    onError={(e) => {
+                      const el = e.currentTarget as HTMLImageElement;
+                      if (el.dataset.fb === "1") { el.style.display = "none"; return; }
+                      el.dataset.fb = "1"; el.src = pollinationsImage(c);
+                    }}
                   />
                   <div className="absolute inset-0 z-[2] bg-gradient-to-t from-background/80 via-background/20 to-transparent" aria-hidden />
                   <div className="absolute inset-0 z-[2] bg-blood/10 mix-blend-multiply" aria-hidden />
