@@ -123,7 +123,7 @@ export function CreaturePage({ creature }: { creature: Creature }) {
                     src={src}
                     alt={`${creature.name} — illuminated plate ${i + 1}`}
                     loading="lazy"
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                    onError={(e) => handleImgError(e, pollinationsImage(creature, 640, 800))}
                   />
                   <figcaption className="font-rune text-[9px] text-gold/70">Plate {String(i + 1).padStart(2, "0")}</figcaption>
                 </figure>
