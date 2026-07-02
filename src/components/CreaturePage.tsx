@@ -42,7 +42,7 @@ const STYLE_SUFFIX = "ancient mythological manuscript illustration, golden ink, 
 
 function imgUrl(prompt: string, seed: number, w = 768, h = 768) {
   const q = encodeURIComponent(`${prompt}, ${STYLE_SUFFIX}`);
-  return `${POLLI}${q}?width=${w}&height=${h}&seed=${seed}&nologo=true&model=flux`;
+  return `${POLLI}${q}?width=${w}&height=${h}&seed=${seed}&nologo=true`;
 }
 
 function seedFor(id: string) {
@@ -52,16 +52,10 @@ function seedFor(id: string) {
 
 function getCreatureImages(creature: Creature) {
   const seed = seedFor(creature.id);
-  const base = `${creature.name}, ${creature.mythology} mythology, ${creature.epithet}`;
   return {
-    hero: imgUrl(`${base}, full body, epic portrait, dramatic lighting`, seed, 1024, 1024),
-    scene: imgUrl(`${base} in ${creature.habitat[0]}, sweeping landscape`, seed + 1, 1280, 720),
-    gallery: [
-      imgUrl(`${base}, close-up of head and eyes, divine aura`, seed + 11, 640, 800),
-      imgUrl(`${base}, mid-action ${creature.powers[0]?.name ?? "ritual"}, glowing energy`, seed + 22, 640, 800),
-      imgUrl(`${creature.name} ancient temple relief, stone carving, ${creature.region}`, seed + 33, 640, 800),
-      imgUrl(`${base}, symbolic emblem on parchment, ${creature.symbol}`, seed + 44, 640, 800),
-    ],
+    hero: creatureHero(creature),
+    scene: imgUrl(`${creature.name} in ${creature.habitat[0]}, sweeping landscape`, seed + 1, 1280, 720),
+    gallery: creatureGallery(creature),
   };
 }
 
