@@ -33,7 +33,11 @@ export function CreatureCard({ creature }: { creature: Creature }) {
           alt={`${creature.name} portrait`}
           loading="lazy"
           className="relative z-[1] w-full h-full object-cover opacity-90 mix-blend-luminosity group-hover:opacity-100 group-hover:mix-blend-normal transition-all duration-500"
-          onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+          onError={(e) => {
+            const el = e.currentTarget as HTMLImageElement;
+            if (el.dataset.fb === "1") { el.style.display = "none"; return; }
+            el.dataset.fb = "1"; el.src = pollinationsImage(creature);
+          }}
         />
         <div className="absolute inset-0 z-[2] bg-gradient-to-t from-background/70 via-transparent to-transparent" aria-hidden />
         <span className="absolute top-2 left-2 z-[3] font-rune text-[10px] text-gold/90 bg-background/70 px-2 py-1 rounded">
