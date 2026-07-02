@@ -208,7 +208,7 @@ function CreatureArtwork({ creature, profile, heroImage }: { creature: Creature;
         alt={`${creature.name} portrait`}
         className="creature-art__photo"
         loading="eager"
-        onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+        onError={(e) => handleImgError(e, pollinationsImage(creature, 1024, 1024))}
       />
       <CreatureEffect creature={creature} />
       <div className="creature-art__ring" aria-hidden />
