@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Creature } from "@/data/creatures";
-import { creatureImage } from "@/lib/creature-image";
+import { creatureImage, pollinationsImage } from "@/lib/creature-image";
 
 const threatColor: Record<string, string> = {
   Benign: "text-emerald",
