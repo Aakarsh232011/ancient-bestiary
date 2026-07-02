@@ -32,12 +32,19 @@ export function creatureHero(creature: Creature) {
   return CREATURE_MEDIA[creature.id]?.hero ?? pollinationsImage(creature, 1024, 1024);
 }
 
-/** Gallery images (always returns at least 4 entries). */
+/** Four distinct AI-generated plates — each a different angle/style of the same beast. */
 export function creatureGallery(creature: Creature): string[] {
-  const media = CREATURE_MEDIA[creature.id];
-  const hero = creatureHero(creature);
-  const gal = media?.gallery?.filter(Boolean) ?? [];
-  const out = [...gal];
-  while (out.length < 4) out.push(hero);
-  return out.slice(0, 6);
+  const seed = seedFor(creature.id);
+  const base = `${creature.name}, ${creature.mythology} mythology, ${creature.epithet}`;
+  const plates: Array<{ prompt: string; s: number }> = [
+    { prompt: `${base}, full body creature portrait, dramatic lighting, cinematic fantasy illustration, highly detailed, painted concept art`, s: seed + 101 },
+    { prompt: `${base}, close-up head study, glowing eyes, intricate scales and features, oil painting, museum quality`, s: seed + 202 },
+    { prompt: `${base}, ancient stone sculpture carved in ${creature.region}, temple relief, weathered marble, dramatic side lighting, archaeological photograph`, s: seed + 303 },
+    { prompt: `${base}, in its habitat of ${creature.habitat[0] ?? "mythic realm"}, wide cinematic landscape shot, epic fantasy environment art`, s: seed + 404 },
+  ];
+  return plates.map(p => {
+    const q = encodeURIComponent(p.prompt);
+    return `${POLLI}${q}?width=768&height=960&seed=${p.s}&nologo=true`;
+  });
 }
+
