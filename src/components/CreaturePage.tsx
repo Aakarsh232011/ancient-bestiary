@@ -3,6 +3,14 @@ import type { CSSProperties, ReactNode } from "react";
 import { SiteShell } from "@/components/SiteShell";
 import { CreatureEffect } from "@/components/CreatureEffect";
 import { creatures, type Creature } from "@/data/creatures";
+import { creatureHero, creatureGallery, pollinationsImage } from "@/lib/creature-image";
+
+function handleImgError(e: React.SyntheticEvent<HTMLImageElement>, fallback: string) {
+  const img = e.currentTarget;
+  if (img.dataset.fallback === "1") { img.style.visibility = "hidden"; return; }
+  img.dataset.fallback = "1";
+  img.src = fallback;
+}
 
 type CreatureStyle = CSSProperties & {
   "--creature-a": string;
