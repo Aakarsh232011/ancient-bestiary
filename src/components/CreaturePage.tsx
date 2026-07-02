@@ -37,18 +37,6 @@ const featuredProfiles: Record<string, VisualProfile> = {
   dragon: { kind: "dragon", scene: "A volcanic treasury where molten light shines between bronze scales", relic: "Gold sparks orbit the heart-scale and flare when the hoard is threatened.", funFact: "Dragon-slaying tales often hide a legal lesson: the hoard belongs to whoever survives the contract written in fire." },
 };
 
-const POLLI = "https://image.pollinations.ai/prompt/";
-const STYLE_SUFFIX = "ancient mythological manuscript illustration, golden ink, dark parchment, ornate codex, painterly, cinematic, intricate detail";
-
-function imgUrl(prompt: string, seed: number, w = 768, h = 768) {
-  const q = encodeURIComponent(`${prompt}, ${STYLE_SUFFIX}`);
-  return `${POLLI}${q}?width=${w}&height=${h}&seed=${seed}&nologo=true`;
-}
-
-function seedFor(id: string) {
-  let s = 0; for (let i = 0; i < id.length; i++) s = (s * 31 + id.charCodeAt(i)) >>> 0;
-  return s % 100000;
-}
 
 function getCreatureImages(creature: Creature) {
   const hero = creatureHero(creature);
