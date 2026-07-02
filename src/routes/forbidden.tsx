@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { SiteShell } from "@/components/SiteShell";
 import { forbiddenCreatures } from "@/data/creatures";
-import { creatureImage } from "@/lib/creature-image";
+import { creatureImage, pollinationsImage } from "@/lib/creature-image";
 import forbiddenImg from "@/assets/forbidden.jpg";
 
 export const Route = createFileRoute("/forbidden")({
